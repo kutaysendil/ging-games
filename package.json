@@ -16,7 +16,8 @@
     "core-js": "^3.6.5",
     "quasar": "^1.0.0",
     "v-animate-css": "0.0.3",
-    "vue-resize-text": "^0.1.1"
+    "vue-resize-text": "^0.1.1",
+    "vue-text-glitch": "^1.0.1"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",

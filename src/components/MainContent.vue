@@ -9,8 +9,17 @@
         v-animate-css="animationObject"
         class="text-center text-amber"
       >
-        Ging UP!
+        <VueTextGlitch
+          highlight1="yellow"
+          highlight2="orange"
+          height="222"
+          steps="20"
+          background="#C072E0"
+          fill="#89D5FB"
+          text="Ging Up!"
+        />
       </div>
+
       <p
         v-resize-text="{
           ratio: 1.5,
@@ -27,16 +36,18 @@
 </template>
 
 <script>
+import VueTextGlitch from "vue-text-glitch";
 export default {
   data() {
     return {
       animationObject: {
-        classes: "flash",
+        classes: "rubberBand",
         duration: 3000,
         iteration: 10000
       }
     };
-  }
+  },
+  components: { VueTextGlitch }
 };
 </script>
 
