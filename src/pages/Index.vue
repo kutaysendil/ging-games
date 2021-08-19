@@ -1,0 +1,58 @@
+<template>
+  <q-page>
+    <main-content></main-content>
+    <most-popular-games></most-popular-games>
+    <about-us></about-us>
+    <q-btn
+      color="white"
+      text-color="black"
+      label="Standard"
+      @click="scrollToElement()"
+    />
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+      perferendis repellat quaerat sequi nisi maiores adipisci, commodi earum a
+      sint corporis similique in, obcaecati eaque? Atque dolorem, quod ipsam
+      quae inventore minus soluta dicta obcaecati provident sequi incidunt
+      possimus. Libero saepe possimus deserunt veritatis eligendi non in
+      necessitatibus obcaecati deleniti!
+    </h1>
+    <h1 ref="div1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+      perferendis repellat quaerat sequi nisi maiores adipisci, commodi earum a
+      sint corporis similique in, obcaecati eaque? Atque dolorem, quod ipsam
+      quae inventore minus soluta dicta obcaecati provident sequi incidunt
+      possimus. Libero saepe possimus deserunt veritatis eligendi non in
+      necessitatibus obcaecati deleniti!
+    </h1>
+  </q-page>
+</template>
+
+<script>
+import mainContent from "components/MainContent.vue";
+import aboutUs from "components/AboutUs.vue";
+import mostPopularGames from "components/MostPopularGames.vue";
+export default {
+  data() {
+    return {
+      animationObject: {
+        classes: "flash",
+        duration: 3000,
+        iteration: 10000
+      }
+    };
+  },
+  components: { mainContent, mostPopularGames, aboutUs },
+  methods: {
+    scrollToElement() {
+      const el = this.$refs.div1;
+
+      if (el) {
+        // Use el.scrollIntoView() to instantly scroll to the element
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
+};
+</script>
+<style></style>
