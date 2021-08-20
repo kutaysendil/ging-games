@@ -1,24 +1,5 @@
 <template>
-  <q-page padding>
-    <div class="q-pa-md row q-col-gutter-lg">
-      <div
-        class="col-xs-6 col-lg-4 col-xl-3"
-        v-for="(item, i) in games"
-        :key="i"
-      >
-        <q-card bordered class="bg-grey-2">
-          <q-card-section>
-            <q-img :src="item.img">
-              <div class="absolute-bottom text-subtitle2 text-center bg-amber">
-                {{ item.name }}as
-              </div>
-            </q-img>
-          </q-card-section>
-          <q-card-actions> </q-card-actions>
-        </q-card>
-      </div>
-    </div>
-  </q-page>
+  <q-page padding> </q-page>
 </template>
 
 <script>

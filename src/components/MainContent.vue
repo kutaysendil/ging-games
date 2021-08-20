@@ -57,11 +57,13 @@ export default {
       buttons: [
         {
           label: "discover",
-          color: "primary"
+          color: "primary",
+          click: "scrollToElement"
         },
         {
           label: "contact",
-          color: "secondary"
+          color: "secondary",
+          click: "asd()"
         }
       ]
     };
