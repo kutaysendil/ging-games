@@ -37,7 +37,14 @@
           :key="i"
           class="q-pa-md q-pt-xl q-mt-xl "
         >
-          <q-btn rounded :color="btn.color" :label="btn.label" size="lg" />
+          <q-btn
+            @click="smooth"
+            rounded
+            :color="btn.color"
+            :label="btn.label"
+            size="lg"
+          />
+          {{ reff }}
         </div>
       </div>
     </q-page>
@@ -68,7 +75,18 @@ export default {
       ]
     };
   },
-  components: { VueTextGlitch }
+  props: ["reff"],
+  components: { VueTextGlitch },
+  methods: {
+    smooth() {
+      const el = this.reff;
+      console.log(this.reff);
+      if (el) {
+        // Use el.scrollIntoView() to instantly scroll to the element
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
 };
 </script>
 

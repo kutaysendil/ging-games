@@ -6,11 +6,11 @@
       label="Standard"
       @click="scrollToElement()"
     />
-    <main-content></main-content>
-    <most-popular-games></most-popular-games>
+    <main-content :reff="reff"></main-content>
+    <most-popular-games @click="onClickChild"> </most-popular-games>
     <about-us></about-us>
 
-    <h1>
+    <h1 ref="deneme">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
       perferendis repellat quaerat sequi nisi maiores adipisci, commodi earum a
       sint corporis similique in, obcaecati eaque? Atque dolorem, quod ipsam
@@ -40,17 +40,21 @@ export default {
         classes: "flash",
         duration: 3000,
         iteration: 10000
-      }
+      },
+      reff: null
     };
   },
   components: { mainContent, mostPopularGames, aboutUs },
   methods: {
     scrollToElement() {
-      const el = this.$refs.mostPopu;
-      if (el) {
-        // Use el.scrollIntoView() to instantly scroll to the element
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      console.log(this.$refs);
+      //   const el = this.$refs.mostPopu;
+      //   if (el) {
+      //     // Use el.scrollIntoView() to instantly scroll to the element
+      //     el.scrollIntoView({ behavior: "smooth" });
+    },
+    onClickChild(value) {
+      this.reff = value;
     }
   }
 };
