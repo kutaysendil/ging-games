@@ -1,13 +1,13 @@
 <template>
   <div class="bg-image">
-    <q-page padding>
+    <q-page padding class="q-pt-xl">
       <div
         v-resize-text="{
           minFontSize: '70px',
           maxFontSize: '170px'
         }"
         v-animate-css="animationObject"
-        class="text-center text-amber q-pt-xl"
+        class="text-center text-amber q-pt-xl q-mt-xl"
       >
         <VueTextGlitch
           highlight1="yellow"
@@ -26,23 +26,18 @@
           minFontSize: '10px',
           maxFontSize: '40px'
         }"
-        class=" text-center q-pt-xl"
+        class=" text-center q-pt-xl q-mt-xl"
       >
         Ging Games is a mobile game company focused on creating engaging
         experiences in tailored 3D spaces for you to play! Anytime, anywhere.
       </p>
-      <div class="flex justify-center q-pt-xl ">
-        <div v-for="(btn, i) in buttons" :key="i" class="q-pa-md q-pt-xl ">
-          <q-btn
-            v-resize-text="{
-              ratio: 1.5,
-              minFontSize: '20px',
-              maxFontSize: '140px'
-            }"
-            rounded
-            :color="btn.color"
-            :label="btn.label"
-          />
+      <div class="flex justify-center q-pt-xl q-mt-xl ">
+        <div
+          v-for="(btn, i) in buttons"
+          :key="i"
+          class="q-pa-md q-pt-xl q-mt-xl "
+        >
+          <q-btn rounded :color="btn.color" :label="btn.label" size="lg" />
         </div>
       </div>
     </q-page>

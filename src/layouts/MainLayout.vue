@@ -12,6 +12,7 @@
             indicator-color="blue"
             active-color="grey"
             active-bg-color="yellow"
+            outside-arrows
           >
             <q-route-tab to="/games" label="Games" />
             <q-route-tab to="/careers" label="CAREERS" />
