@@ -11,7 +11,7 @@
 import mainContent from "components/MainContent.vue";
 import aboutUs from "components/AboutUs.vue";
 import mostPopularGames from "components/MostPopularGames.vue";
-import careers from "./Careers.vue";
+import careers from "components/Careers.vue";
 export default {
   data() {
     return {

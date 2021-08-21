@@ -13,17 +13,24 @@
       <div class=" q-pt-lg">
         <div class="q-pt-lg">
           <div class="row q-pt-lg">
-            <div class="q-pt-lg col-xs-12  col-lg-6 flex items-center ">
+            <div
+              v-resize-text="{
+                ratio: 2,
+                minFontSize: '10px',
+                maxFontSize: '50px'
+              }"
+              class="q-pt-lg col-xs-12 col-md-6   flex items-center "
+            >
               <q-img
                 src="~assets/abouts.png"
                 spinner-color="white"
                 class="q-py-lg"
-                sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
               />
             </div>
-            <div class="col-xs-12 q-py-lg col-lg-6 ">
+            <div class="col-xs-12 q-py-lg col-md-6 ">
               <div
                 v-resize-text="{
+                  ratio: 2,
                   minFontSize: '10px',
                   maxFontSize: '50px'
                 }"
