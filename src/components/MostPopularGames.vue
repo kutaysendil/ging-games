@@ -1,13 +1,15 @@
 <template>
   <q-page padding>
-    <div ref="test">
-      <q-btn @click="asd" color="white" text-color="black" label="Standard" />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-      perferendis repellat quaerat sequi nisi maiores adipisci, commodi earum a
-      sint corporis similique in, obcaecati eaque? Atque dolorem, quod ipsam
-      quae inventore minus soluta dicta obcaecati provident sequi incidunt
-      possimus. Libero saepe possimus deserunt veritatis eligendi non in
-      necessitatibus obcaecati deleniti!
+    <div v-for="(item, i) in games" :key="i">
+      {{ item }}
+
+      <q-card class="my-card">
+        <q-img :src="item.img">
+          <div class="text-subtitle2 absolute-top text-center">
+            Title
+          </div>
+        </q-img>
+      </q-card>
     </div>
   </q-page>
 </template>
@@ -27,11 +29,6 @@ export default {
         { name: "deneme7", img: "" }
       ]
     };
-  },
-  methods: {
-    asd() {
-      this.$emit("click", this.$refs.test);
-    }
   }
 };
 </script>

@@ -32,19 +32,20 @@
         experiences in tailored 3D spaces for you to play! Anytime, anywhere.
       </p>
       <div class="flex justify-center q-pt-xl q-mt-xl ">
-        <div
-          v-for="(btn, i) in buttons"
-          :key="i"
-          class="q-pa-md q-pt-xl q-mt-xl "
-        >
+        <div class="q-pa-md q-pt-xl q-mt-xl ">
           <q-btn
             @click="smooth"
             rounded
-            :color="btn.color"
-            :label="btn.label"
+            color="primary"
+            label="discover"
+            size="lg"
+          /><q-btn
+            to="/contact"
+            rounded
+            color="secondary"
+            label="contact"
             size="lg"
           />
-          {{ reff }}
         </div>
       </div>
     </q-page>
@@ -60,29 +61,14 @@ export default {
         classes: "rubberBand",
         duration: 3000,
         iteration: 10000
-      },
-      buttons: [
-        {
-          label: "discover",
-          color: "primary",
-          click: "scrollToElement"
-        },
-        {
-          label: "contact",
-          color: "secondary",
-          click: "asd()"
-        }
-      ]
+      }
     };
   },
-  props: ["reff"],
   components: { VueTextGlitch },
   methods: {
     smooth() {
-      const el = this.reff;
-      console.log(this.reff);
+      const el = this.$parent.$children[1].$el;
       if (el) {
-        // Use el.scrollIntoView() to instantly scroll to the element
         el.scrollIntoView({ behavior: "smooth" });
       }
     }

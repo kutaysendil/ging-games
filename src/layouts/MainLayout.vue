@@ -1,13 +1,15 @@
 <template>
   <q-layout view="hHh lpR fff">
     <q-header reveal elevated class="bg-transparent text-white">
-      <q-toolbar class="bg-primary ">
+      <q-toolbar class="bg-black ">
         <q-toolbar-title shrink>
-          <q-btn flat round to="/" icon="assets/gingLogo.png" />
+          <q-btn flat round to="/"
+            ><img src="~assets/ginglogo.png" alt=""
+          /></q-btn>
         </q-toolbar-title>
         <q-toolbar-title>
           <q-tabs
-            class="text-black "
+            class="text-white "
             align="right"
             indicator-color="blue"
             active-color="grey"
