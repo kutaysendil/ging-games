@@ -31,13 +31,17 @@
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
-          <div>Footer</div>
+          <Footer></Footer>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
   </q-layout>
 </template>
 <script>
-export default {};
+import Footer from "components/Footer.vue";
+
+export default {
+  components: { Footer }
+};
 </script>
 <style scoped lang="scss"></style>

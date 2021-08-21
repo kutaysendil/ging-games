@@ -1,10 +1,11 @@
 <template>
-  <q-page class="about" padding>
+  <q-page class="about " padding>
     <div class="row q-pt-lg">
       <div
         v-resize-text="{
+          ratio: 1,
           minFontSize: '50px',
-          maxFontSize: '150px'
+          maxFontSize: '100px'
         }"
         class="text-center col q-pt-lg text-bold"
       >
@@ -15,7 +16,7 @@
           <div class="row q-pt-lg">
             <div
               v-resize-text="{
-                ratio: 2,
+                ratio: 2.2,
                 minFontSize: '10px',
                 maxFontSize: '50px'
               }"
@@ -24,13 +25,13 @@
               <q-img
                 src="~assets/abouts.png"
                 spinner-color="white"
-                class="q-py-lg"
+                class="q-py-lg abouts"
               />
             </div>
             <div class="col-xs-12 q-py-lg col-md-6 ">
               <div
                 v-resize-text="{
-                  ratio: 2,
+                  ratio: 2.2,
                   minFontSize: '10px',
                   maxFontSize: '50px'
                 }"
@@ -65,5 +66,6 @@ export default {};
 <style lang="scss">
 .about {
   background-color: #8be4fe;
+  opacity: 0.8;
 }
 </style>
