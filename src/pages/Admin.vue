@@ -1,7 +1,7 @@
 <template>
   <q-page padding class="bg">
     <div>
-      games
+      admin
     </div>
   </q-page>
 </template>

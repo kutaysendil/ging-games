@@ -25,7 +25,7 @@
               <q-img
                 src="~assets/abouts.png"
                 spinner-color="white"
-                class="q-py-lg abouts"
+                class="q-py-lg "
               />
             </div>
             <div class="col-xs-12 q-py-lg col-md-6 ">
