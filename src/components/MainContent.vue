@@ -32,7 +32,7 @@
         experiences in tailored 3D spaces for you to play! Anytime, anywhere.
       </p>
       <div class="flex justify-center q-pt-xl q-mt-xl ">
-        <div class="q-pa-md q-pt-xl q-mt-xl ">
+        <div class="q-pa-md q-pt-xl q-mt-xl q-px-lg ">
           <q-btn
             @click="smooth"
             rounded

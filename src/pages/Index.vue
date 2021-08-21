@@ -3,6 +3,7 @@
     <main-content></main-content>
     <most-popular-games> </most-popular-games>
     <about-us></about-us>
+    <careers></careers>
   </q-page>
 </template>
 
@@ -10,6 +11,7 @@
 import mainContent from "components/MainContent.vue";
 import aboutUs from "components/AboutUs.vue";
 import mostPopularGames from "components/MostPopularGames.vue";
+import careers from "./Careers.vue";
 export default {
   data() {
     return {
@@ -20,7 +22,7 @@ export default {
       }
     };
   },
-  components: { mainContent, mostPopularGames, aboutUs },
+  components: { mainContent, mostPopularGames, aboutUs, careers },
   methods: {}
 };
 </script>
