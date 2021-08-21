@@ -1,6 +1,8 @@
 <template>
-  <q-page padding>
-    games
+  <q-page padding class="bg">
+    <div>
+      games
+    </div>
   </q-page>
 </template>
 
@@ -9,3 +11,10 @@ export default {
   // name: 'PageName',
 };
 </script>
+
+<style lang="scss" scoped>
+.bg {
+  background-image: url("~assets/Grad.png");
+  opacity: 0.4;
+}
+</style>
