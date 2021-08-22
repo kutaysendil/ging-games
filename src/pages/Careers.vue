@@ -327,7 +327,7 @@ export default {
 <style lang="scss" scoped>
 .bg {
   background-image: url("~assets/Grad.png");
-  opacity: 0.5;
+  opacity: 0.8;
   background-repeat: space;
 }
 .my-card {

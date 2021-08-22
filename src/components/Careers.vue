@@ -17,17 +17,22 @@
             v-resize-text="{
               ratio: 2.2,
               minFontSize: '10px',
-              maxFontSize: '50px'
+              maxFontSize: '35px'
             }"
-            class="text-weight-light q-py-md"
+            class="text-weight-light q-pa-xl"
           >
-            Most Popular GamesPlay beyond Ging up! We are always looking for
-            talented and creatively driven individuals to join our team. We
-            offer a cozy work environment, fair social and financial
-            compansation for you hard work and lots and lots of coffee.
+            We are always looking for talented and creatively driven individuals
+            to join our team. We offer a cozy work environment, fair social and
+            financial compansation for you hard work and lots and lots of
+            coffee.
           </div>
           <div class="text-center q-py-lg">
-            <q-btn color="white" text-color="black" label="See More" />
+            <q-btn
+              to="/careers"
+              color="white"
+              text-color="black"
+              label="See More"
+            />
           </div>
         </div>
         <div class="col-xs-12 col-md-6 ">

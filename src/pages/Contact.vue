@@ -22,7 +22,7 @@
           <div class="row justify-around items-center q-col-gutter-xl q-pt-xl">
             <div class="col-4  " style="max-width:550px;  ">
               <q-img
-                style="background:white;"
+                style=" opacity:5;"
                 src="~assets/contactus.png"
                 spinner-color="white"
               />

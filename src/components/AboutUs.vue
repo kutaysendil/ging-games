@@ -33,9 +33,9 @@
                 v-resize-text="{
                   ratio: 2.2,
                   minFontSize: '10px',
-                  maxFontSize: '50px'
+                  maxFontSize: '35px'
                 }"
-                class="text-weight-light"
+                class="text-weight-light q-pa-xl"
               >
                 Ging Games is a mobile game company based in Ankara, Turkey.
                 Since our launch in 2019 we have worked with numerous bussiness
