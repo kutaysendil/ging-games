@@ -3,6 +3,11 @@
     <div class="q-pa-md q-gutter-lg q-pt-xl">
       <q-breadcrumbs>
         <q-breadcrumbs-el label="Home" icon="fas fa-home" to="/" />
+        <q-breadcrumbs-el
+          label="Careers"
+          icon="fas fa-laptop-house"
+          to="/careers"
+        />
         <q-breadcrumbs-el label="Contact" icon="fas fa-paper-plane" />
       </q-breadcrumbs>
     </div>
@@ -31,7 +36,11 @@
             <div class="col-8 q-pr-xl " style="max-width:900px;">
               <q-card class="my-card">
                 <q-card-section>
-                  <q-form @submit="onSubmit" class="q-gutter-md">
+                  <q-form
+                    @submit="onSubmit"
+                    @reset="onReset"
+                    class="q-gutter-md"
+                  >
                     <q-input
                       rounded
                       outlined
@@ -61,6 +70,16 @@
                       ]"
                       v-model="mail"
                     />
+                    <q-file
+                      v-model="files"
+                      rounded
+                      outlined
+                      color="white"
+                      bg-color="blue-3"
+                      label="Upload Your CV"
+                      accept=".pdf"
+                      @rejected="onRejected"
+                    />
                     <q-input
                       rounded
                       outlined
@@ -76,6 +95,13 @@
                     />
                     <div class="text-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
+                      <q-btn
+                        label="Reset"
+                        type="reset"
+                        color="primary"
+                        flat
+                        class="q-ml-sm"
+                      />
                     </div>
                   </q-form>
                 </q-card-section>
@@ -140,6 +166,16 @@
                       ]"
                       v-model="mail"
                     />
+                    <q-file
+                      v-model="files"
+                      rounded
+                      outlined
+                      color="white"
+                      bg-color="blue-3"
+                      label="Upload Your CV"
+                      accept=".pdf"
+                      @rejected="onRejected"
+                    />
                     <q-input
                       rounded
                       outlined
@@ -155,6 +191,13 @@
                     />
                     <div class="text-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
+                      <q-btn
+                        label="Reset"
+                        type="reset"
+                        color="primary"
+                        flat
+                        class="q-ml-sm"
+                      />
                     </div>
                   </q-form>
                 </q-card-section>
@@ -200,6 +243,16 @@
                   ]"
                   v-model="mail"
                 />
+                <q-file
+                  v-model="files"
+                  rounded
+                  outlined
+                  color="white"
+                  bg-color="blue-3"
+                  label="Upload Your CV"
+                  accept=".pdf"
+                  @rejected="onRejected"
+                />
                 <q-input
                   rounded
                   outlined
@@ -215,6 +268,13 @@
                 />
                 <div class="text-center">
                   <q-btn label="Submit" type="submit" color="blue-6" />
+                  <q-btn
+                    label="Reset"
+                    type="reset"
+                    color="primary"
+                    flat
+                    class="q-ml-sm"
+                  />
                 </div>
               </q-form>
             </q-card-section>
@@ -232,12 +292,25 @@ export default {
     return {
       name: null,
       mail: null,
-      message: null
+      message: null,
+      files: null
     };
   },
   methods: {
     onSubmit() {
       console.log("OK");
+    },
+    onReset() {
+      this.name = null;
+      this.mail = null;
+      this.message = null;
+      this.files = false;
+    },
+    onRejected(rejectedEntries) {
+      this.$q.notify({
+        type: "negative",
+        message: ` File did not pass validation constraints. You can update just PDF.`
+      });
     }
   }
 };

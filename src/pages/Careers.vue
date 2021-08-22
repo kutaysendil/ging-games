@@ -41,7 +41,7 @@
                   </q-card-section>
                   <q-card-actions>
                     <q-space />
-                    <q-btn flat>Apply Now</q-btn>
+                    <q-btn flat to="careers/apply">Apply Now</q-btn>
                   </q-card-actions>
                 </q-card>
               </div>
