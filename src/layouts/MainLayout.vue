@@ -3,7 +3,7 @@
     <q-header reveal elevated class="bg-transparent text-white">
       <q-toolbar class="bg-black ">
         <q-toolbar-title shrink>
-          <q-btn flat round to="/"
+          <q-btn flat round to="/" @click="smooth"
             ><img src="~assets/ginglogo.png" alt=""
           /></q-btn>
         </q-toolbar-title>
@@ -41,7 +41,15 @@
 import Footer from "components/Footer.vue";
 
 export default {
-  components: { Footer }
+  components: { Footer },
+  methods: {
+    smooth() {
+      const el = this.$parent.$children[0].$el;
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
 };
 </script>
 <style scoped lang="scss"></style>
