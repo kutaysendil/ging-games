@@ -87,16 +87,141 @@
     </div>
     <div :class="$q.screen.sm ? '' : 'hidden'">
       <div class="column">
-        <div class="col">Write To Us!</div>
-        <div class="col">
-          <div class="row">
-            <div class="col-4">resim</div>
-            <div class="col-8">inputlar</div>
+        <div
+          v-resize-text="{
+            ratio: 1,
+            minFontSize: '10px',
+            maxFontSize: '80px'
+          }"
+          class="col "
+        >
+          Write To Us!
+        </div>
+        <div class="col ">
+          <div class="row justify-around items-center q-col-gutter-xl q-pt-md">
+            <div class="col-6  " style="max-width:550px;  ">
+              <q-img
+                style="background:white;"
+                src="~assets/contactus.png"
+                spinner-color="white"
+              />
+            </div>
+
+            <div class="col-6  " style="max-width:600px;">
+              <q-card class="my-card">
+                <q-card-section>
+                  <q-form @submit="onSubmit" class="q-gutter-md">
+                    <q-input
+                      rounded
+                      outlined
+                      color="white"
+                      bg-color="blue-3"
+                      label="Your name *"
+                      lazy-rules
+                      :rules="[
+                        val =>
+                          (val && val.length > 3) ||
+                          'Please type your name correctly'
+                      ]"
+                      v-model="name"
+                    />
+
+                    <q-input
+                      rounded
+                      outlined
+                      color="white"
+                      bg-color="blue-3"
+                      type="email"
+                      label="Your Email*"
+                      lazy-rules
+                      :rules="[
+                        val =>
+                          (val && val.length > 10) || 'Please type your mail'
+                      ]"
+                      v-model="mail"
+                    />
+                    <q-input
+                      rounded
+                      outlined
+                      label="Enter Your Message Here... "
+                      type="textarea"
+                      color="white"
+                      bg-color="blue-3"
+                      v-model="message"
+                      :rules="[
+                        val =>
+                          (val && val.length > 30) || 'Please type your message'
+                      ]"
+                    />
+                    <div class="text-center">
+                      <q-btn label="Submit" type="submit" color="blue-6" />
+                    </div>
+                  </q-form>
+                </q-card-section>
+              </q-card>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div :class="$q.screen.xs ? '' : 'hidden'">phone</div>
+    <div :class="$q.screen.xs ? '' : 'hidden'">
+      <div>
+        <div class="col-6  " style="max-width:600px;">
+          <div class="my-card">
+            <q-card-section>
+              <q-img src="~assets/contactus.png" spinner-color="white" />
+            </q-card-section>
+            <q-card-section>
+              <q-form @submit="onSubmit" class="q-gutter-sm">
+                <q-input
+                  rounded
+                  outlined
+                  color="white"
+                  bg-color="blue-3"
+                  label="Your name *"
+                  lazy-rules
+                  :rules="[
+                    val =>
+                      (val && val.length > 3) ||
+                      'Please type your name correctly'
+                  ]"
+                  v-model="name"
+                />
+                <q-input
+                  rounded
+                  outlined
+                  color="white"
+                  bg-color="blue-3"
+                  type="email"
+                  label="Your Email*"
+                  lazy-rules
+                  :rules="[
+                    val => (val && val.length > 10) || 'Please type your mail'
+                  ]"
+                  v-model="mail"
+                />
+                <q-input
+                  rounded
+                  outlined
+                  label="Enter Your Message Here... "
+                  type="textarea"
+                  color="white"
+                  bg-color="blue-3"
+                  v-model="message"
+                  :rules="[
+                    val =>
+                      (val && val.length > 30) || 'Please type your message'
+                  ]"
+                />
+                <div class="text-center">
+                  <q-btn label="Submit" type="submit" color="blue-6" />
+                </div>
+              </q-form>
+            </q-card-section>
+          </div>
+        </div>
+      </div>
+    </div>
   </q-page>
 </template>
 
