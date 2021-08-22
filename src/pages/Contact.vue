@@ -38,6 +38,7 @@
                       color="white"
                       bg-color="blue-3"
                       label="Your name *"
+                      name="name"
                       lazy-rules
                       :rules="[
                         val =>
@@ -54,6 +55,7 @@
                       bg-color="blue-3"
                       type="email"
                       label="Your Email*"
+                      name="email"
                       lazy-rules
                       :rules="[
                         val =>
@@ -69,6 +71,7 @@
                       color="white"
                       bg-color="blue-3"
                       v-model="message"
+                      name="message"
                       :rules="[
                         val =>
                           (val && val.length > 30) || 'Please type your message'
@@ -117,6 +120,7 @@
                       color="white"
                       bg-color="blue-3"
                       label="Your name *"
+                      name="name"
                       lazy-rules
                       :rules="[
                         val =>
@@ -133,6 +137,7 @@
                       bg-color="blue-3"
                       type="email"
                       label="Your Email*"
+                      name="email"
                       lazy-rules
                       :rules="[
                         val =>
@@ -148,6 +153,7 @@
                       color="white"
                       bg-color="blue-3"
                       v-model="message"
+                      name="message"
                       :rules="[
                         val =>
                           (val && val.length > 30) || 'Please type your message'
@@ -179,6 +185,7 @@
                   color="white"
                   bg-color="blue-3"
                   label="Your name *"
+                  name="name"
                   lazy-rules
                   :rules="[
                     val =>
@@ -194,6 +201,7 @@
                   bg-color="blue-3"
                   type="email"
                   label="Your Email*"
+                  name="email"
                   lazy-rules
                   :rules="[
                     val => (val && val.length > 10) || 'Please type your mail'
@@ -208,6 +216,7 @@
                   color="white"
                   bg-color="blue-3"
                   v-model="message"
+                  name="message"
                   :rules="[
                     val =>
                       (val && val.length > 30) || 'Please type your message'
@@ -226,6 +235,7 @@
 </template>
 
 <script>
+import emailjs from "emailjs-com";
 export default {
   // name: 'PageName',
   data() {
@@ -236,8 +246,21 @@ export default {
     };
   },
   methods: {
-    onSubmit() {
-      console.log("OK");
+    onSubmit(e) {
+      emailjs
+        .sendForm(
+          `${process.env.YOUR_SERVICE_ID}`,
+          `${process.env.YOUR_TEMPLATE_ID}`,
+          e.target,
+          `${process.env.YOUR_USER_ID}`
+        )
+        .then(result => {
+          console.log("Success", result.status, result.text);
+          (this.name = null), (this.mail = null), (this.message = null);
+        }),
+        error => {
+          console.log("FAILED", error);
+        };
     }
   }
 };

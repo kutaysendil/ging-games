@@ -22,6 +22,7 @@ export default {
       }
     };
   },
+
   components: { mainContent, mostPopularGames, aboutUs, careers },
   methods: {}
 };
