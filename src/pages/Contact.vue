@@ -78,6 +78,10 @@
                       ]"
                     />
                     <div class="text-center">
+                      <vue-recaptcha
+                        sitekey="6LdznYUbAAAAAJAkDc5nr72w1TLs0gHOhWVxquWB"
+                      />
+
                       <q-btn label="Submit" type="submit" color="blue-6" />
                     </div>
                   </q-form>
@@ -160,6 +164,9 @@
                       ]"
                     />
                     <div class="text-center">
+                      <vue-recaptcha
+                        sitekey="6LdznYUbAAAAAJAkDc5nr72w1TLs0gHOhWVxquWB"
+                      ></vue-recaptcha>
                       <q-btn label="Submit" type="submit" color="blue-6" />
                     </div>
                   </q-form>
@@ -223,6 +230,9 @@
                   ]"
                 />
                 <div class="text-center">
+                  <vue-recaptcha
+                    sitekey="6LdznYUbAAAAAJAkDc5nr72w1TLs0gHOhWVxquWB"
+                  ></vue-recaptcha>
                   <q-btn label="Submit" type="submit" color="blue-6" />
                 </div>
               </q-form>
@@ -236,15 +246,21 @@
 
 <script>
 import emailjs from "emailjs-com";
+import VueRecaptcha from "vue-recaptcha";
 export default {
   // name: 'PageName',
   data() {
     return {
       name: null,
       mail: null,
-      message: null
+      message: null,
+      key: process.env.GOOGLE_CHAPTA
     };
   },
+  created() {
+    console.log(process.env.FOO);
+  },
+  components: { VueRecaptcha },
   methods: {
     onSubmit(e) {
       emailjs
