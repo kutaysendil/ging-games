@@ -256,11 +256,29 @@ export default {
         )
         .then(result => {
           console.log("Success", result.status, result.text);
-          (this.name = null), (this.mail = null), (this.message = null);
-        }),
-        error => {
+
+          //(this.name = null), (this.mail = null), (this.message = null);
+
+          this.$q
+            .dialog({
+              title: "Success",
+              message: `You are being redirected to the homepage`
+            })
+            .onOk(() => {
+              this.$router.push("/");
+            })
+
+            .onDismiss(() => {
+              this.$router.push("/");
+            });
+        })
+        .catch(error => {
           console.log("FAILED", error);
-        };
+          this.$q.dialog({
+            title: "Error",
+            message: ` ${error.text}`
+          });
+        });
     }
   }
 };
