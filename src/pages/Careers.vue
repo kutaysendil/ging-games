@@ -158,7 +158,7 @@
                   </q-card-section>
                   <q-card-actions>
                     <q-space />
-                    <q-btn flat>Apply Now</q-btn>
+                    <q-btn flat to="careers/apply">Apply Now</q-btn>
                   </q-card-actions>
                 </q-card>
               </div>
@@ -263,7 +263,12 @@
                 {{ oppor }}
               </q-card-section>
               <q-card-actions align="center">
-                <q-btn color="white" text-color="black" label="Apply Now" />
+                <q-btn
+                  to="careers/apply"
+                  color="white"
+                  text-color="black"
+                  label="Apply Now"
+                />
               </q-card-actions>
             </q-card>
           </div>
@@ -298,7 +303,12 @@
                 {{ culture }}
               </q-card-section>
               <q-card-actions align="center">
-                <q-btn color="white" text-color="black" label="Apply Now" />
+                <q-btn
+                  to="careers/apply"
+                  color="white"
+                  text-color="black"
+                  label="Apply Now"
+                />
               </q-card-actions>
             </q-card>
           </div>

@@ -8,27 +8,27 @@
           icon="fas fa-laptop-house"
           to="/careers"
         />
-        <q-breadcrumbs-el label="Contact" icon="fas fa-paper-plane" />
+        <q-breadcrumbs-el label="Apply" icon="fas fa-code-branch" />
       </q-breadcrumbs>
     </div>
     <div :class="$q.screen.gt.sm ? '' : 'hidden'">
-      <div class="column q-pt-xl">
+      <div class="column ">
         <div
           v-resize-text="{
             ratio: 1,
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col q-pa-lg"
+          class="col q-pa-sm"
         >
           Write To Us!
         </div>
         <div class="col q-pt-xl">
           <div class="row justify-around items-center q-col-gutter-xl q-pt-xl">
-            <div class="col-4  " style="max-width:550px;  ">
+            <div class="col-4  " style="max-width:450px;  ">
               <q-img
                 style=" opacity:5;"
-                src="~assets/contactus.png"
+                src="~assets/careeers/apply.png"
                 spinner-color="white"
               />
             </div>
@@ -125,18 +125,18 @@
         </div>
         <div class="col ">
           <div class="row justify-around items-center q-col-gutter-xl q-pt-md">
-            <div class="col-6  " style="max-width:550px;  ">
-              <q-img
-                style="background:white;"
-                src="~assets/contactus.png"
-                spinner-color="white"
-              />
+            <div class="col-6  " style="max-width:400px;  ">
+              <q-img src="~assets/careeers/apply.png" spinner-color="white" />
             </div>
 
             <div class="col-6  " style="max-width:600px;">
               <q-card class="my-card">
                 <q-card-section>
-                  <q-form @submit="onSubmit" class="q-gutter-md">
+                  <q-form
+                    @submit="onSubmit"
+                    @reset="onReset"
+                    class="q-gutter-md"
+                  >
                     <q-input
                       rounded
                       outlined
@@ -212,10 +212,10 @@
         <div class="col-6  " style="max-width:600px;">
           <div class="my-card">
             <q-card-section>
-              <q-img src="~assets/contactus.png" spinner-color="white" />
+              <q-img src="~assets/careeers/apply.png" spinner-color="white" />
             </q-card-section>
             <q-card-section>
-              <q-form @submit="onSubmit" class="q-gutter-sm">
+              <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-sm">
                 <q-input
                   rounded
                   outlined

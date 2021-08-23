@@ -77,11 +77,13 @@
                           (val && val.length > 30) || 'Please type your message'
                       ]"
                     />
-                    <div class="text-center">
+                    <div class="flex flex-center">
                       <vue-recaptcha
-                        sitekey="6LdznYUbAAAAAJAkDc5nr72w1TLs0gHOhWVxquWB"
-                      />
-
+                        :sitekey="this.key"
+                        :loadRecaptchaScript="true"
+                      ></vue-recaptcha>
+                    </div>
+                    <div class="text-center flex flex-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
                     </div>
                   </q-form>
@@ -163,10 +165,16 @@
                           (val && val.length > 30) || 'Please type your message'
                       ]"
                     />
-                    <div class="text-center">
+                    <div
+                      style=" transform:scale(0.77);
+    transform-origin:0 0;"
+                    >
                       <vue-recaptcha
-                        sitekey="6LdznYUbAAAAAJAkDc5nr72w1TLs0gHOhWVxquWB"
+                        :sitekey="this.key"
+                        :loadRecaptchaScript="true"
                       ></vue-recaptcha>
+                    </div>
+                    <div class="text-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
                     </div>
                   </q-form>
@@ -229,10 +237,19 @@
                       (val && val.length > 30) || 'Please type your message'
                   ]"
                 />
+                <div>
+                  <div
+                    style=" transform:scale(0.77);
+    transform-origin:0 0;"
+                  >
+                    <vue-recaptcha
+                      size="10000px"
+                      :sitekey="this.key"
+                      :loadRecaptchaScript="true"
+                    ></vue-recaptcha>
+                  </div>
+                </div>
                 <div class="text-center">
-                  <vue-recaptcha
-                    sitekey="6LdznYUbAAAAAJAkDc5nr72w1TLs0gHOhWVxquWB"
-                  ></vue-recaptcha>
                   <q-btn label="Submit" type="submit" color="blue-6" />
                 </div>
               </q-form>
@@ -247,6 +264,7 @@
 <script>
 import emailjs from "emailjs-com";
 import VueRecaptcha from "vue-recaptcha";
+
 export default {
   // name: 'PageName',
   data() {
@@ -254,11 +272,8 @@ export default {
       name: null,
       mail: null,
       message: null,
-      key: process.env.GOOGLE_CHAPTA
+      key: process.env.GOOGLE_CAPTCHA_KEY
     };
-  },
-  created() {
-    console.log(process.env.FOO);
   },
   components: { VueRecaptcha },
   methods: {
@@ -271,8 +286,6 @@ export default {
           `${process.env.YOUR_USER_ID}`
         )
         .then(result => {
-          console.log("Success", result.status, result.text);
-
           //(this.name = null), (this.mail = null), (this.message = null);
 
           this.$q
@@ -280,16 +293,11 @@ export default {
               title: "Success",
               message: `You are being redirected to the homepage`
             })
-            .onOk(() => {
-              this.$router.push("/");
-            })
-
             .onDismiss(() => {
               this.$router.push("/");
             });
         })
         .catch(error => {
-          console.log("FAILED", error);
           this.$q.dialog({
             title: "Error",
             message: ` ${error.text}`

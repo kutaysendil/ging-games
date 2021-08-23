@@ -23,6 +23,7 @@
           bg-color="blue-3"
           v-model="password"
         />
+
         <div class="text-center">
           <q-btn label="Login" type="submit" color="blue-6" />
         </div>
