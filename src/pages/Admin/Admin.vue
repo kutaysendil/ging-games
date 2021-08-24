@@ -2,9 +2,13 @@
   <q-page padding class="bg ">
     <div v-if="user">
       <logout></logout>
-      <!-- <upload-form></upload-form>
-      <deneme></deneme> -->
-      <deneme2></deneme2>
+      <upload-form></upload-form>
+      <q-btn
+        to="admin/update"
+        color="white"
+        text-color="black"
+        label="Standard"
+      />
     </div>
     <div v-else>
       <login></login>
@@ -17,8 +21,6 @@ import { auth } from "src/Firebase";
 import Login from "pages/Admin/Login.vue";
 import Logout from "pages/Admin/Logout.vue";
 import UploadForm from "./UploadForm.vue";
-import Deneme from "pages/Admin/Deneme.vue";
-import Deneme2 from "pages/Admin/Deneme2.vue";
 export default {
   // name: 'PageName',
   data() {
@@ -28,7 +30,7 @@ export default {
       user: null
     };
   },
-  components: { Login, Logout, Deneme2 },
+  components: { Login, Logout, UploadForm },
   mounted() {
     auth.onAuthStateChanged(authUser => {
       if (authUser) {

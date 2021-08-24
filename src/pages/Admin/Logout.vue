@@ -1,6 +1,12 @@
 <template>
-  <div>
-    <q-btn @click="logout" color="white" text-color="black" label="logout" />
+  <div class="text-right">
+    <q-btn
+      @click="logout"
+      icon-right="logout"
+      color="red"
+      text-color="black"
+      label="logout"
+    />
   </div>
 </template>
 
