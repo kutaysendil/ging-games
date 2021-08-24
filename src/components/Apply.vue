@@ -21,7 +21,7 @@
           }"
           class="col q-pa-sm"
         >
-          Write To Us!
+          Apply Now!
         </div>
         <div class="col q-pt-xl">
           <div class="row justify-around items-center q-col-gutter-xl q-pt-xl">
@@ -70,14 +70,16 @@
                       ]"
                       v-model="mail"
                     />
-                    <q-file
-                      v-model="files"
-                      rounded
-                      outlined
-                      color="white"
-                      bg-color="blue-3"
-                      label="Upload Your CV"
-                      accept=".pdf"
+                    <q-input
+                      @input="
+                        val => {
+                          file = val[0];
+                        }
+                      "
+                      @change="previewImage"
+                      accept="application/pdf"
+                      filled
+                      type="file"
                       @rejected="onRejected"
                     />
                     <q-input
@@ -93,6 +95,14 @@
                           (val && val.length > 30) || 'Please type your message'
                       ]"
                     />
+                    <div class="flex flex-center">
+                      <vue-recaptcha
+                        size="10000px"
+                        :sitekey="this.key"
+                        :loadRecaptchaScript="true"
+                        @verify="verifyMethod"
+                      ></vue-recaptcha>
+                    </div>
                     <div class="text-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
                       <q-btn
@@ -121,7 +131,7 @@
           }"
           class="col "
         >
-          Write To Us!
+          Apply Now!
         </div>
         <div class="col ">
           <div class="row justify-around items-center q-col-gutter-xl q-pt-md">
@@ -166,14 +176,16 @@
                       ]"
                       v-model="mail"
                     />
-                    <q-file
-                      v-model="files"
-                      rounded
-                      outlined
-                      color="white"
-                      bg-color="blue-3"
-                      label="Upload Your CV"
-                      accept=".pdf"
+                    <q-input
+                      @input="
+                        val => {
+                          file = val[0];
+                        }
+                      "
+                      @change="previewImage"
+                      accept="application/pdf"
+                      filled
+                      type="file"
                       @rejected="onRejected"
                     />
                     <q-input
@@ -189,6 +201,19 @@
                           (val && val.length > 30) || 'Please type your message'
                       ]"
                     />
+                    <div class="flex">
+                      <div
+                        style=" transform:scale(0.77);
+    transform-origin:0 0;"
+                      >
+                        <vue-recaptcha
+                          size="10000px"
+                          :sitekey="this.key"
+                          :loadRecaptchaScript="true"
+                          @verify="verifyMethod"
+                        ></vue-recaptcha>
+                      </div>
+                    </div>
                     <div class="text-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
                       <q-btn
@@ -243,14 +268,16 @@
                   ]"
                   v-model="mail"
                 />
-                <q-file
-                  v-model="files"
-                  rounded
-                  outlined
-                  color="white"
-                  bg-color="blue-3"
-                  label="Upload Your CV"
-                  accept=".pdf"
+                <q-input
+                  @input="
+                    val => {
+                      file = val[0];
+                    }
+                  "
+                  @change="previewImage"
+                  accept="application/pdf"
+                  filled
+                  type="file"
                   @rejected="onRejected"
                 />
                 <q-input
@@ -266,6 +293,19 @@
                       (val && val.length > 30) || 'Please type your message'
                   ]"
                 />
+                <div class="flex flex-center">
+                  <div
+                    style="
+    transform-origin:0 0;"
+                  >
+                    <vue-recaptcha
+                      size="10000px"
+                      :sitekey="this.key"
+                      :loadRecaptchaScript="true"
+                      @verify="verifyMethod"
+                    ></vue-recaptcha>
+                  </div>
+                </div>
                 <div class="text-center">
                   <q-btn label="Submit" type="submit" color="blue-6" />
                   <q-btn
@@ -286,25 +326,69 @@
 </template>
 
 <script>
+import db, { imgStorage } from "src/Firebase";
+
+import VueRecaptcha from "vue-recaptcha";
 export default {
   // name: 'PageName',
   data() {
     return {
-      name: null,
-      mail: null,
-      message: null,
-      files: null
+      name: "",
+      mail: "",
+      message: "",
+      pdfData: null,
+      pdfUrl: null,
+      key: process.env.GOOGLE_CAPTCHA_KEY,
+      google: false
     };
   },
+  components: { VueRecaptcha },
   methods: {
-    onSubmit() {
-      console.log("OK");
+    async onSubmit() {
+      if (!this.google) {
+        this.$q.notify({
+          type: "negative",
+          position: "center",
+          message: `Are you robot ? `
+        });
+      } else {
+        this.pdfUrl = null;
+        this.$q.loading.show();
+        const storageRef = await imgStorage.ref();
+        const fileRef = await storageRef.child(this.pdfData.name);
+        await fileRef.put(this.pdfData);
+        this.pdfUrl = await fileRef.getDownloadURL();
+        await db.collection("apply").add({
+          name: this.name,
+          mail: this.mail,
+          message: this.message,
+          pdfUrl: this.pdfUrl
+        });
+
+        this.$q.loading.hide();
+        await this.$q.notify({
+          type: "positive",
+          position: "center",
+          message: `Successfully `
+        });
+        setTimeout(() => {
+          this.$router.go();
+        }, 2000);
+      }
+    },
+    verifyMethod() {
+      this.google = true;
     },
     onReset() {
-      this.name = null;
-      this.mail = null;
-      this.message = null;
-      this.files = false;
+      this.name = "";
+      this.mail = "";
+      this.message = "";
+      this.pdfData = "";
+      this.pdfUrl = "";
+    },
+    previewImage(event) {
+      this.pdfUrl = null;
+      this.pdfData = event.target.files[0];
     },
     onRejected(rejectedEntries) {
       this.$q.notify({

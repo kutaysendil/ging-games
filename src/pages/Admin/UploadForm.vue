@@ -31,6 +31,7 @@
             accept="image/*"
             filled
             type="file"
+            @rejected="onRejected"
           />
 
           <div class="text-center">
@@ -51,8 +52,7 @@ export default {
       name: "",
       url: "",
       imageData: null,
-      picture: null,
-      uploadValue: 0
+      picture: null
     };
   },
   created() {},
@@ -64,7 +64,6 @@ export default {
       });
     },
     previewImage(event) {
-      this.uploadValue = 0;
       this.picture = null;
       this.imageData = event.target.files[0];
     },

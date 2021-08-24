@@ -165,14 +165,16 @@
                           (val && val.length > 30) || 'Please type your message'
                       ]"
                     />
-                    <div
-                      style=" transform:scale(0.77);
+                    <div class="flex">
+                      <div
+                        style=" transform:scale(0.77);
     transform-origin:0 0;"
-                    >
-                      <vue-recaptcha
-                        :sitekey="this.key"
-                        :loadRecaptchaScript="true"
-                      ></vue-recaptcha>
+                      >
+                        <vue-recaptcha
+                          :sitekey="this.key"
+                          :loadRecaptchaScript="true"
+                        ></vue-recaptcha>
+                      </div>
                     </div>
                     <div class="text-center">
                       <q-btn label="Submit" type="submit" color="blue-6" />
@@ -237,9 +239,9 @@
                       (val && val.length > 30) || 'Please type your message'
                   ]"
                 />
-                <div>
+                <div class="flex flex-center">
                   <div
-                    style=" transform:scale(0.77);
+                    style=" 
     transform-origin:0 0;"
                   >
                     <vue-recaptcha
