@@ -54,6 +54,8 @@
 
 <script>
 import VueTextGlitch from "vue-text-glitch";
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
@@ -64,13 +66,13 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapState("app", ["eleman"])
+  },
   components: { VueTextGlitch },
   methods: {
     smooth() {
-      const el = this.$parent.$children[1].$el;
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      this.eleman.scrollIntoView({ behavior: "smooth" });
     }
   }
 };

@@ -1,15 +1,17 @@
 <template>
   <q-page padding>
-    <div v-for="(item, i) in games" :key="i">
-      {{ item }}
+    <div ref="eleman">
+      <div v-for="(item, i) in games" :key="i">
+        {{ item }}
 
-      <q-card class="my-card">
-        <q-img :src="item.img">
-          <div class="text-subtitle2 absolute-top text-center">
-            Title
-          </div>
-        </q-img>
-      </q-card>
+        <q-card class="my-card">
+          <q-img :src="item.img">
+            <div class="text-subtitle2 absolute-top text-center">
+              Title
+            </div>
+          </q-img>
+        </q-card>
+      </div>
     </div>
   </q-page>
 </template>
@@ -29,6 +31,9 @@ export default {
         { name: "deneme7", img: "" }
       ]
     };
+  },
+  mounted() {
+    this.$store.commit("app/setEleman", this.$refs.eleman);
   }
 };
 </script>

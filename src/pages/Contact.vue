@@ -288,20 +288,29 @@ export default {
         .then(result => {
           //(this.name = null), (this.mail = null), (this.message = null);
 
-          this.$q
-            .dialog({
-              title: "Success",
-              message: `You are being redirected to the homepage`
-            })
-            .onDismiss(() => {
-              this.$router.push("/");
-            });
+          this.$q.notify({
+            type: "positive",
+            position: "center",
+            timeout: "1500",
+            message: `Success - You are being redirected to the homepage.`
+          });
+          setTimeout(() => {
+            this.$router.push("/");
+          }, 2000);
         })
         .catch(error => {
-          this.$q.dialog({
-            title: "Error",
-            message: ` ${error.text}`
-          });
+          if (error.status === 400) {
+            this.$q.notify({
+              type: "negative",
+              position: "center",
+              message: `Are you robot ?`
+            });
+          } else {
+            this.$q.notify({
+              type: "negative",
+              message: ` ${error.text}`
+            });
+          }
         });
     }
   }

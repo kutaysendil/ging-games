@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="bg flex flex-center">
+  <q-page padding class="flex flex-center">
     <div class="">
       <q-form @submit="onSubmit" class="q-gutter-md">
         <q-input
@@ -10,6 +10,7 @@
           type="email"
           autofocus
           autogrow
+          name="mail"
           label="Your Email*"
           lazy-rules
           v-model="mail"
@@ -19,6 +20,7 @@
           outlined
           label="Enter Your Password* "
           type="password"
+          name="pass"
           color="white"
           bg-color="blue-3"
           v-model="password"
@@ -33,17 +35,24 @@
 </template>
 
 <script>
+import { auth } from "src/Firebase";
 export default {
   // name: 'PageName',
   data() {
     return {
       mail: "",
-      password: ""
+      password: "",
+      user: null
     };
   },
+
   methods: {
-    onSubmit() {
-      console.log("hello");
+    onSubmit(e) {
+      e.preventDefault();
+      auth
+        .signInWithEmailAndPassword(this.mail, this.password)
+        .then(res => console.log(res))
+        .catch(err => console.log(err.message));
     }
   }
 };
