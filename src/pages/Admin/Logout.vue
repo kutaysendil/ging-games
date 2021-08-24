@@ -1,5 +1,5 @@
 <template>
-  <div class="text-right">
+  <div>
     <q-btn
       @click="logout"
       icon-right="logout"

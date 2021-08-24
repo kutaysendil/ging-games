@@ -20,7 +20,7 @@
             lazy-rules
             v-model="url"
           />
-
+          <q-checkbox v-model="homePage" label="Home Page" />
           <q-input
             @input="
               val => {
@@ -33,7 +33,15 @@
             type="file"
             @rejected="onRejected"
           />
-
+          <q-file
+            style="max-width: 300px"
+            v-model="filesImages"
+            filled
+            rounded
+            label="Restricted to images"
+            accept=".jpg, image/*"
+            @rejected="onRejected"
+          />
           <div class="text-center">
             <q-btn label="upload database" type="submit" color="blue-6" />
           </div>
@@ -51,8 +59,10 @@ export default {
     return {
       name: "",
       url: "",
+      homePage: false,
       imageData: null,
-      picture: null
+      picture: null,
+      filesImages: null
     };
   },
   created() {},
@@ -66,6 +76,7 @@ export default {
     previewImage(event) {
       this.picture = null;
       this.imageData = event.target.files[0];
+      console.log(this.imageData);
     },
 
     async onUpload() {
@@ -74,13 +85,14 @@ export default {
         message: "Uploading..."
       });
       const storageRef = await imgStorage.ref();
-      const fileRef = await storageRef.child(this.name);
+      const fileRef = await storageRef.child(this.imageData.name);
       await fileRef.put(this.imageData);
       this.picture = await fileRef.getDownloadURL();
       await db.collection("games").add({
         name: this.name,
         url: this.url,
-        photo: this.picture
+        photo: this.picture,
+        homePage: this.homePage
       });
 
       this.$q.loading.hide();
@@ -92,8 +104,8 @@ export default {
       await (this.name = ""),
         (this.url = ""),
         (this.picture = null),
-        (this.imageData = null);
-      this.uploadValue = 0;
+        (this.imageData = null),
+        (this.homePage = false);
     }
   }
 };

@@ -77,7 +77,7 @@
                         }
                       "
                       @change="previewImage"
-                      accept="application/pdf"
+                      accept="pdf"
                       filled
                       type="file"
                       @rejected="onRejected"
@@ -183,7 +183,7 @@
                         }
                       "
                       @change="previewImage"
-                      accept="application/pdf"
+                      accept="pdf"
                       filled
                       type="file"
                       @rejected="onRejected"
@@ -275,7 +275,7 @@
                     }
                   "
                   @change="previewImage"
-                  accept="application/pdf"
+                  accept="pdf"
                   filled
                   type="file"
                   @rejected="onRejected"
@@ -326,7 +326,7 @@
 </template>
 
 <script>
-import db, { imgStorage } from "src/Firebase";
+import db, { imgStorage, timeStamp } from "src/Firebase";
 
 import VueRecaptcha from "vue-recaptcha";
 export default {
@@ -353,12 +353,14 @@ export default {
         });
       } else {
         this.pdfUrl = null;
+        const addDate = timeStamp();
         this.$q.loading.show();
         const storageRef = await imgStorage.ref();
         const fileRef = await storageRef.child(this.pdfData.name);
         await fileRef.put(this.pdfData);
         this.pdfUrl = await fileRef.getDownloadURL();
         await db.collection("apply").add({
+          addDate: addDate,
           name: this.name,
           mail: this.mail,
           message: this.message,

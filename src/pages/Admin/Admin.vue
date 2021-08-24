@@ -1,14 +1,23 @@
 <template>
   <q-page padding class="bg ">
     <div v-if="user">
-      <logout></logout>
+      <div class="flex flex-center q-gutter-xl q-py-xl">
+        <q-btn
+          to="/admin/update"
+          color="yellow"
+          text-color="black"
+          label="Update & Delete Games"
+        />
+        <q-btn
+          to="/admin/jobapplications"
+          color="blue"
+          text-color="black"
+          label="Job applications"
+        />
+        <logout></logout>
+      </div>
+
       <upload-form></upload-form>
-      <q-btn
-        to="admin/update"
-        color="white"
-        text-color="black"
-        label="Standard"
-      />
     </div>
     <div v-else>
       <login></login>
@@ -37,15 +46,6 @@ export default {
         this.user = authUser;
       }
     });
-  },
-  methods: {
-    onSubmit(e) {
-      e.preventDefault();
-      auth
-        .signInWithEmailAndPassword(this.mail, this.password)
-        .then(res => console.log(res))
-        .catch(err => console.log(err.message));
-    }
   }
 };
 </script>

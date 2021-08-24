@@ -1,14 +1,15 @@
 <template>
-  <div class="bg">asdasdasd</div>
+  <div class="bg">jobb app</div>
 </template>
 
 <script>
-import { auth } from "src/Firebase";
+import db, { auth, } from "src/Firebase";
 export default {
   // name: 'PageName',
   data() {
     return {
-      user: null
+      user: null,
+      job: []
     };
   },
   mounted() {

@@ -20,9 +20,10 @@ const imgStorage = firebaseApp.storage();
 
 //Giriş için
 const auth = firebase.auth();
-
+//tarih
+const timeStamp = firebase.firestore.FieldValue.serverTimestamp;
 //const provider = new firebase.auth.GoogleAuthProvider();
 
 export default db;
 
-export { auth, imgStorage };
+export { auth, imgStorage, timeStamp };
