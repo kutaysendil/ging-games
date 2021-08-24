@@ -51,8 +51,18 @@ export default {
       e.preventDefault();
       auth
         .signInWithEmailAndPassword(this.mail, this.password)
-        .then(res => console.log(res))
-        .catch(err => console.log(err.message));
+        .then(res =>
+          this.$q.notify({
+            type: "positive",
+            message: `Successfully login`
+          })
+        )
+        .catch(err =>
+          this.$q.notify({
+            type: "negative",
+            message: `${err.message}`
+          })
+        );
     }
   }
 };

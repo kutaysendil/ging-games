@@ -21,7 +21,6 @@ export default {
       auth.signOut();
       this.$q.notify({
         type: "positive",
-        timeout: "1500",
         message: `Successfully logged out`
       });
       setTimeout(() => {
