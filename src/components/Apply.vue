@@ -77,7 +77,7 @@
                         }
                       "
                       @change="previewImage"
-                      accept="pdf"
+                      accept="application/pdf"
                       filled
                       type="file"
                       @rejected="onRejected"
@@ -92,7 +92,7 @@
                       v-model="message"
                       :rules="[
                         val =>
-                          (val && val.length > 30) || 'Please type your message'
+                          (val && val.length > 10) || 'Please type your message'
                       ]"
                     />
                     <div class="flex flex-center">
@@ -183,7 +183,7 @@
                         }
                       "
                       @change="previewImage"
-                      accept="pdf"
+                      accept="application/pdf"
                       filled
                       type="file"
                       @rejected="onRejected"
@@ -275,7 +275,7 @@
                     }
                   "
                   @change="previewImage"
-                  accept="pdf"
+                  accept="application/pdf"
                   filled
                   type="file"
                   @rejected="onRejected"
@@ -356,7 +356,7 @@ export default {
         const addDate = timeStamp();
         this.$q.loading.show();
         const storageRef = await imgStorage.ref();
-        const fileRef = await storageRef.child(this.pdfData.name);
+        const fileRef = await storageRef.child(this.name);
         await fileRef.put(this.pdfData);
         this.pdfUrl = await fileRef.getDownloadURL();
         await db.collection("apply").add({

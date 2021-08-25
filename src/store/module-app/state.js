@@ -1,5 +1,6 @@
 export default function() {
   return {
-    eleman: null
+    eleman: null,
+    jobApp: null
   };
 }

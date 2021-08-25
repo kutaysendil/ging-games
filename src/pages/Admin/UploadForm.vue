@@ -16,9 +16,17 @@
             outlined
             color="white"
             bg-color="blue-3"
-            label="Link *"
+            label="AppStore Link *"
             lazy-rules
             v-model="url"
+          /><q-input
+            rounded
+            outlined
+            color="white"
+            bg-color="blue-3"
+            label="Google Link *"
+            lazy-rules
+            v-model="googleurl"
           />
           <q-checkbox v-model="homePage" label="Home Page" />
           <q-input
@@ -32,16 +40,10 @@
             filled
             type="file"
             @rejected="onRejected"
+            bg-color="blue-3"
+            dense
           />
-          <q-file
-            style="max-width: 300px"
-            v-model="filesImages"
-            filled
-            rounded
-            label="Restricted to images"
-            accept=".jpg, image/*"
-            @rejected="onRejected"
-          />
+
           <div class="text-center">
             <q-btn label="upload database" type="submit" color="blue-6" />
           </div>
@@ -59,10 +61,11 @@ export default {
     return {
       name: "",
       url: "",
+      googleurl: "",
       homePage: false,
       imageData: null,
       picture: null,
-      filesImages: null
+      isUpload: false
     };
   },
   created() {},
@@ -91,6 +94,7 @@ export default {
       await db.collection("games").add({
         name: this.name,
         url: this.url,
+        googleurl: this.googleurl,
         photo: this.picture,
         homePage: this.homePage
       });
@@ -105,6 +109,7 @@ export default {
         (this.url = ""),
         (this.picture = null),
         (this.imageData = null),
+        (this.googleurl = ""),
         (this.homePage = false);
     }
   }
@@ -117,7 +122,6 @@ export default {
   opacity: 0.8;
 }
 
-.preview {
-  width: 200px;
+.upload {
 }
 </style>

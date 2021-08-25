@@ -1,14 +1,22 @@
 <template>
-  <div class="bg">asdasdasd</div>
+  <div class="bg">
+    <div v-for="j in games" :key="j.message">
+      <div>name:{{ j.name }}</div>
+      <div>Homepage:{{ j.homePage }}</div>
+      <div>Photo:{{ j.photo }}</div>
+      <div>DownloadUrl:{{ j.url }}</div>
+    </div>
+  </div>
 </template>
 
 <script>
-import { auth } from "src/Firebase";
+import db, { auth } from "src/Firebase";
 export default {
   // name: 'PageName',
   data() {
     return {
-      user: null
+      user: null,
+      games: []
     };
   },
   mounted() {
@@ -19,6 +27,24 @@ export default {
         this.$router.push("/");
       }
     });
+    this.fetchData();
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const { docs } = await db.collection("games").get();
+        this.games = docs.map(doc => {
+          const { id } = docs;
+          const data = doc.data();
+          return { id, ...data };
+        });
+      } catch (error) {
+        this.$q.notify({
+          type: "negative",
+          message: ` ${error}`
+        });
+      }
+    }
   }
 };
 </script>
