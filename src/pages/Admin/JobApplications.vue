@@ -1,10 +1,16 @@
 <template>
   <q-page padding class="bg">
-    <div class="flex flex-center" v-if="job == null">
-      <h1>No Applications Yet</h1>
-    </div>
-    <div v-else>
-      <q-markup-table bordered square separator="cell" class=".shadow-24">
+    <div>
+      <div v-show="!jobs" class="flex flex-center">
+        <h1>No Applications Yet</h1>
+      </div>
+      <q-markup-table
+        v-show="jobs"
+        bordered
+        square
+        separator="cell"
+        class="shadow-24"
+      >
         <thead>
           <tr class="text-weight-bolder text-h6">
             <th class="text-left">Name</th>
@@ -57,7 +63,8 @@ export default {
   data() {
     return {
       user: null,
-      job: null
+      job: null,
+      jobs: false
     };
   },
   mounted() {
@@ -82,6 +89,13 @@ export default {
           const data = doc.data();
           return { id, ...data };
         });
+        if (this.job.length >= 1) {
+          this.jobs = true;
+        } else {
+          this.jobs = false;
+        }
+
+        console.log(this.jobs);
       } catch (error) {
         this.$q.notify({
           type: "negative",
@@ -118,7 +132,7 @@ export default {
       this.$q
         .dialog({
           title: "Alert",
-          message: "Are you sure?"
+          message: "Are you sure you want to delete from database?"
         })
         .onOk(async () => {
           await this.$q.loading.show();

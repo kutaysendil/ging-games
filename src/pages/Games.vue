@@ -1,19 +1,71 @@
 <template>
-  <q-page padding class="bg ">
-    games
+  <q-page padding class=" bg ">
+    <div>
+      <div class="row q-col-gutter-sm items-center  justify-around ">
+        <div
+          class="col-xs-12 col-md-6 col-lg-4 q-gutter-lg q-pb-xl"
+          v-for="g in games"
+          :key="g.name"
+        >
+          <q-card class="my-card ">
+            <q-img :src="g.photo" basic>
+              <div class="absolute-bottom text-subtitle2 text-center">
+                {{ g.name }}
+              </div>
+            </q-img>
+          </q-card>
+        </div>
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script>
+import db from "src/Firebase";
 export default {
   // name: 'PageName',
+  data() {
+    return {
+      games: []
+    };
+  },
+  mounted() {
+    this.fetchData();
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const { docs } = await db
+          .collection("games")
+          .where("GamesGridNo", ">=", 1)
+          .orderBy("GamesGridNo")
+          .get();
+        this.games = docs.map(doc => {
+          const { id } = docs;
+          const data = doc.data();
+          return { id, ...data };
+        });
+      } catch (error) {
+        console.log(error);
+        this.$q.notify({
+          type: "negative",
+          position: "center",
+          message: ` ${error}`
+        });
+      }
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .bg {
   background-image: url("~assets/Grad.png");
-  opacity: 0.5;
+  opacity: 0.8;
   background-repeat: space;
+}
+.my-card {
+  width: 100%;
+  max-width: 250px;
 }
 </style>

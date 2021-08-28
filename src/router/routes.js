@@ -19,6 +19,14 @@ const routes = [
       {
         path: "admin/jobapplications",
         component: () => import("pages/Admin/JobApplications.vue")
+      },
+      {
+        path: "admin/update/updategamespage",
+        component: () => import("pages/Admin/UpdateGamesPage.vue")
+      },
+      {
+        path: "admin/update/updatehomepage",
+        component: () => import("pages/Admin/UpdateHomePage.vue")
       }
     ]
   },

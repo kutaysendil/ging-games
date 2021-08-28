@@ -19,16 +19,46 @@
             label="AppStore Link *"
             lazy-rules
             v-model="url"
+            disa
           /><q-input
             rounded
             outlined
             color="white"
             bg-color="blue-3"
             label="Google Link *"
-            lazy-rules
             v-model="googleurl"
           />
-          <q-checkbox v-model="homePage" label="Home Page" />
+          <div class="flex q-gutter-xl q-pa-md">
+            <q-checkbox v-model="home" label="Homepage" />
+
+            <div>
+              <q-input
+                v-if="home"
+                rounded
+                outlined
+                color="white"
+                bg-color="blue-3"
+                label="Homepage Grid no*"
+                v-model.number="homePageGridNo"
+                type="number"
+              />
+            </div>
+          </div>
+          <div class="flex q-gutter-xl q-pa-md">
+            <q-checkbox v-model="games" label="GamesPage" />
+            <div>
+              <q-input
+                v-if="games"
+                rounded
+                outlined
+                color="white"
+                bg-color="blue-3"
+                label="Games grid no*"
+                v-model.number="GamesGridNo"
+                type="number"
+              />
+            </div>
+          </div>
           <q-input
             @input="
               val => {
@@ -62,10 +92,12 @@ export default {
       name: "",
       url: "",
       googleurl: "",
-      homePage: false,
+      home: false,
+      homePageGridNo: 0,
+      games: false,
+      GamesGridNo: 0,
       imageData: null,
-      picture: null,
-      isUpload: false
+      picture: null
     };
   },
   created() {},
@@ -79,7 +111,6 @@ export default {
     previewImage(event) {
       this.picture = null;
       this.imageData = event.target.files[0];
-      console.log(this.imageData);
     },
 
     async onUpload() {
@@ -96,7 +127,8 @@ export default {
         url: this.url,
         googleurl: this.googleurl,
         photo: this.picture,
-        homePage: this.homePage
+        homePageGridNo: this.homePageGridNo,
+        GamesGridNo: this.GamesGridNo
       });
 
       this.$q.loading.hide();
@@ -110,7 +142,10 @@ export default {
         (this.picture = null),
         (this.imageData = null),
         (this.googleurl = ""),
-        (this.homePage = false);
+        (this.home = false),
+        (this.GamesGridNo = 0),
+        (this.games = false),
+        (this.homePageGridNo = 0);
     }
   }
 };
@@ -120,8 +155,5 @@ export default {
 .bg {
   background-image: url("~assets/Grad.png");
   opacity: 0.8;
-}
-
-.upload {
 }
 </style>

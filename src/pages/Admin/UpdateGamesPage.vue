@@ -2,25 +2,15 @@
   <q-page class="bg flex flex-center" padding>
     <div class=" q-gutter-xl">
       <q-btn
-        color="yellow-6"
-        text-color="black"
-        label="Update Homepage"
-        @click="updatehomepage"
-      />
-      <q-btn
-        color="green-6"
-        text-color="black"
-        label="update gamespage"
-        @click="updategamespage"
-      />
-      <q-btn
         color="red-6"
         text-color="black"
         label="back"
         icon="fas fa-chevron-left"
         @click="back"
-      /></div
-  ></q-page>
+      />
+      gamespage
+    </div></q-page
+  >
 </template>
 
 <script>
@@ -64,12 +54,6 @@ export default {
     },
     back() {
       this.$router.go(-1);
-    },
-    updategamespage() {
-      this.$router.push("update/updategamespage");
-    },
-    updatehomepage() {
-      this.$router.push("update/updatehomepage");
     }
   }
 };
