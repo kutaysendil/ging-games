@@ -19,13 +19,15 @@
         label="back"
         icon="fas fa-chevron-left"
         @click="back"
-      /></div
+      /><logout class="absolute-bottom-right" /></div
   ></q-page>
 </template>
 
 <script>
 import db, { auth } from "src/Firebase";
+import Logout from "./Logout.vue";
 export default {
+  components: { Logout },
   // name: 'PageName',
   data() {
     return {

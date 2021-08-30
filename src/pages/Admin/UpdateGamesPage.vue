@@ -29,33 +29,42 @@
               <div class="flex justify-between">
                 <q-input
                   dense
-                  v-model="name"
+                  v-model="name[i]"
                   label="Name"
                   lazy-rules
                   :rules="[
                     val => (val && val.length > 3) || 'Please type your name '
                   ]"
                 />
-                <q-btn flat label="Update" @click="uName(g.id)" />
+                <q-btn
+                  flat
+                  label="Update"
+                  @click="uName(g.id, i)"
+                  :disable="name.length == 0"
+                  icon="far fa-edit"
+                  color="primary"
+                />
               </div>
               <div class="flex justify-between">
                 <q-input
                   dense
-                  v-model.number="grid"
+                  v-model.number="grid[i]"
                   label="Grid No"
                   type="number"
                 />
                 <q-btn
-                  @click="uGrid(g.id)"
+                  @click="uGrid(g.id, i)"
                   flat
                   label="Update"
-                  :disable="grid == 0"
+                  :disable="grid.length == 0"
+                  icon="far fa-edit"
+                  color="primary"
                 />
               </div>
               <div class="flex justify-between">
                 <q-input
                   dense
-                  v-model="gourl"
+                  v-model="gourl[i]"
                   label="GoogleUrl"
                   :rules="[
                     val =>
@@ -63,30 +72,32 @@
                   ]"
                 />
                 <q-btn
-                  @click="uGUrl(g.id)"
+                  @click="uGUrl(g.id, i)"
                   flat
                   label="Update"
-                  :disable="gourl.length < 3"
+                  :disable="gourl.length == 0"
+                  icon="far fa-edit"
+                  color="primary"
                 />
               </div>
               <div class="flex justify-between">
-                <q-input
-                  dense
-                  v-model="appurl"
-                  label="AppStoreUrl"
-                  :rules="[
-                    val => (val && val.length > 3) || 'Please type your App url'
-                  ]"
-                />
+                <q-input dense v-model="appurl[i]" label="AppStoreUrl" />
                 <q-btn
-                  @click="uAUrl(g.id)"
+                  @click="uAUrl(g.id, i)"
                   flat
                   label="Update"
-                  :disable="appurl.length < 3"
+                  :disable="appurl.length == 0"
+                  icon="far fa-edit"
+                  color="primary"
                 />
               </div>
               <div class="flex flex-center">
-                <q-btn @click="deleteG(g.id, g.photo)" flat label="Delete" />
+                <q-btn
+                  @click="deleteG(g.id, g.photo)"
+                  icon="fas fa-trash"
+                  color="red"
+                  label="Delete"
+                />
               </div>
             </div>
           </q-card-actions>
@@ -104,10 +115,10 @@ export default {
     return {
       user: null,
       games: null,
-      name: "",
-      grid: 0,
-      gourl: "",
-      appurl: ""
+      name: [],
+      grid: [],
+      gourl: [],
+      appurl: []
     };
   },
   mounted() {
@@ -143,7 +154,7 @@ export default {
     back() {
       this.$router.go(-1);
     },
-    async uName(id) {
+    async uName(id, i) {
       this.$q
         .dialog({
           title: "Alert",
@@ -156,7 +167,7 @@ export default {
           await this.$q.loading.show();
           const update = await db.collection("games").doc(id);
           await update
-            .update({ name: this.name })
+            .update({ name: this.name[i] })
             .then(() => {
               console.log("suecces");
             })
@@ -167,7 +178,7 @@ export default {
           await this.$router.go();
         });
     },
-    async uGrid(id) {
+    async uGrid(id, i) {
       console.log(typeof this.grid);
       this.$q
         .dialog({
@@ -181,7 +192,7 @@ export default {
           await this.$q.loading.show();
           const update = await db.collection("games").doc(id);
           await update
-            .update({ GamesGridNo: this.grid })
+            .update({ GamesGridNo: this.grid[i] })
             .then(() => {
               console.log("suecces");
             })
@@ -192,7 +203,7 @@ export default {
           await this.$router.go();
         });
     },
-    async uGUrl(id) {
+    async uGUrl(id, i) {
       this.$q
         .dialog({
           title: "Alert",
@@ -205,7 +216,7 @@ export default {
           await this.$q.loading.show();
           const update = await db.collection("games").doc(id);
           await update
-            .update({ googleurl: this.gourl })
+            .update({ googleurl: this.gourl[i] })
             .then(() => {
               console.log("suecces");
             })
@@ -216,7 +227,7 @@ export default {
           await this.$router.go();
         });
     },
-    async uAUrl(id) {
+    async uAUrl(id, i) {
       this.$q
         .dialog({
           title: "Alert",
@@ -229,7 +240,7 @@ export default {
           await this.$q.loading.show();
           const update = await db.collection("games").doc(id);
           await update
-            .update({ url: this.appurl })
+            .update({ url: this.appurl[i] })
             .then(() => {
               console.log("suecces");
             })

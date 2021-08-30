@@ -1,8 +1,17 @@
 <template>
   <q-page padding class="bg">
     <div>
-      <div v-show="!jobs" class="flex flex-center">
-        <h1>No Applications Yet</h1>
+      <div v-show="!jobs" class=" column">
+        <h1 class="text-center">No Applications Yet</h1>
+        <q-btn
+          color="red-6"
+          text-color="black"
+          label="back"
+          class="self-center"
+          icon="fas fa-chevron-left"
+          @click="back"
+        />
+        <logout class="absolute-bottom-right" />
       </div>
       <q-markup-table
         v-show="jobs"
@@ -51,6 +60,7 @@
           </tr>
         </tbody>
       </q-markup-table>
+      <logout class="absolute-bottom-right" />
     </div>
   </q-page>
 </template>
@@ -58,7 +68,9 @@
 <script>
 import db, { auth, imgStorage } from "src/Firebase";
 import JobApplyDialog from "pages/Admin/Dialogs/JobApplyDialog.vue";
+import Logout from "./Logout.vue";
 export default {
+  components: { Logout },
   // name: 'PageName',
   data() {
     return {
@@ -150,6 +162,9 @@ export default {
         .onDismiss(() => {
           // console.log('I am triggered on both OK and Cancel')
         });
+    },
+    back() {
+      this.$router.go(-1);
     }
   }
 };
