@@ -299,8 +299,5 @@ export default {
   height: 20rem;
   object-fit: cover;
 }
-.q-dialog-plugin .q-card {
-  background-color: rgb(22, 113, 218);
-  color: red;
-}
+
 </style>

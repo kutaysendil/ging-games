@@ -1,20 +1,31 @@
 <template>
   <q-page padding>
     <div ref="eleman">
-      <div class="row q-col-gutter-sm items-center  justify-around ">
+      <div class="row items-center justify-end">
         <div
-          class="col-xs-12 col-md-6 col-lg-4 q-gutter-lg q-pb-xl"
+          class="col-xs-12 col-sm-6 col-lg-4  "
           v-for="g in games"
           :key="g.name"
         >
           <q-card class="my-card ">
-            <q-img :src="g.photo" basic>
+            <q-img class="my-img" :src="g.photo" basic>
               <div class="absolute-bottom text-subtitle2 text-center">
                 {{ g.name }}
               </div>
             </q-img>
           </q-card>
         </div>
+      </div>
+    </div>
+    <div class="row items-center ">
+      <div class="col">
+        One of three cols
+      </div>
+      <div class="col">
+        One of three cols
+      </div>
+      <div class="col">
+        One of three cols
       </div>
     </div>
   </q-page>
@@ -61,5 +72,10 @@ export default {
 .my-card {
   width: 100%;
   max-width: 250px;
+}
+.my-img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
 }
 </style>
