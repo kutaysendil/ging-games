@@ -1,9 +1,10 @@
 <template>
-  <q-page padding>
+  <q-page class="bg">
+    <q-separator size="3px" />
     <div ref="eleman">
-      <div class="row items-center justify-end">
+      <div class="row justify-evenly content-center full-width">
         <div
-          class="col-xs-12 col-sm-6 col-lg-4  "
+          class="col-xs-12 col-md-6 col-lg-4 q-my-xl"
           v-for="g in games"
           :key="g.name"
         >
@@ -17,17 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="row items-center ">
-      <div class="col">
-        One of three cols
-      </div>
-      <div class="col">
-        One of three cols
-      </div>
-      <div class="col">
-        One of three cols
-      </div>
-    </div>
+    <q-separator size="3px" />
   </q-page>
 </template>
 
@@ -69,13 +60,17 @@ export default {
 </script>
 
 <style lang="scss">
+.bg {
+  background-color: #d8cece60;
+}
 .my-card {
   width: 100%;
   max-width: 250px;
+  margin: auto;
 }
 .my-img {
   width: 100%;
-  height: 12rem;
+  height: 20rem;
   object-fit: cover;
 }
 </style>

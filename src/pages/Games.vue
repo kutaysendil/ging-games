@@ -1,20 +1,18 @@
 <template>
   <q-page padding class=" bg ">
-    <div>
-      <div class="row  items-center  justify-around ">
-        <div
-          class="col-xs-12 col-md-6 col-lg-4"
-          v-for="g in games"
-          :key="g.name"
-        >
-          <q-card class="my-card ">
-            <q-img class="my-img" :src="g.photo" basic>
-              <div class="absolute-bottom text-subtitle2 text-center">
-                {{ g.name }}
-              </div>
-            </q-img>
-          </q-card>
-        </div>
+    <div class=" row justify-evenly content-center full-width ">
+      <div
+        class="col-xs-12 col-md-6 col-lg-4 q-my-xl"
+        v-for="g in games"
+        :key="g.name"
+      >
+        <q-card class="my-card ">
+          <q-img class="my-img" :src="g.photo" basic>
+            <div class="absolute-bottom text-subtitle2 text-center">
+              {{ g.name }}
+            </div>
+          </q-img>
+        </q-card>
       </div>
     </div>
   </q-page>
@@ -66,7 +64,8 @@ export default {
 }
 .my-card {
   width: 100%;
-  max-width: 450px;
+  max-width: 250px;
+  margin: auto;
 }
 .my-img {
   width: 100%;
