@@ -29,9 +29,10 @@
           <div class="text-center q-py-lg">
             <q-btn
               to="/careers"
-              color="white"
-              text-color="black"
+              color="black"
+              text-color="white"
               label="See More"
+              size="1.4rem"
             />
           </div>
         </div>
