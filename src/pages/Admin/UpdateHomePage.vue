@@ -170,13 +170,12 @@ export default {
             .then(() => {
               this.$q.notify({
                 type: "positive",
-                position: "center",
                 message: `Success`
               });
             })
             .catch(err => {
               this.$q.notify({
-                type: "positive",
+                type: "negative",
                 position: "center",
                 message: `${err}`
               });
@@ -202,13 +201,12 @@ export default {
             .then(() => {
               this.$q.notify({
                 type: "positive",
-                position: "center",
                 message: `Success`
               });
             })
             .catch(err => {
               this.$q.notify({
-                type: "positive",
+                type: "negative",
                 position: "center",
                 message: `${err}`
               });
@@ -234,13 +232,12 @@ export default {
             .then(() => {
               this.$q.notify({
                 type: "positive",
-                position: "center",
                 message: `Success`
               });
             })
             .catch(err => {
               this.$q.notify({
-                type: "positive",
+                type: "negative",
                 position: "center",
                 message: `${err}`
               });
@@ -266,13 +263,12 @@ export default {
             .then(() => {
               this.$q.notify({
                 type: "positive",
-                position: "center",
                 message: `success`
               });
             })
             .catch(err => {
               this.$q.notify({
-                type: "positive",
+                type: "negative",
                 position: "center",
                 message: `${err}`
               });
@@ -301,13 +297,12 @@ export default {
             .then(() => {
               this.$q.notify({
                 type: "positive",
-                position: "center",
                 message: `Success`
               });
             })
             .catch(err => {
               this.$q.notify({
-                type: "positive",
+                type: "negative",
                 position: "center",
                 message: `${err}`
               });

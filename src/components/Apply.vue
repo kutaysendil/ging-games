@@ -370,7 +370,6 @@ export default {
         this.$q.loading.hide();
         await this.$q.notify({
           type: "positive",
-          position: "center",
           message: `Successfully `
         });
         setTimeout(() => {

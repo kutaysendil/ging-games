@@ -292,7 +292,6 @@ export default {
 
           this.$q.notify({
             type: "positive",
-            position: "center",
             timeout: "1500",
             message: `Success - You are being redirected to the homepage.`
           });
