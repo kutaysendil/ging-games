@@ -23,8 +23,7 @@ export default {
     };
   },
 
-  components: { mainContent, mostPopularGames, aboutUs, careers },
-  methods: {}
+  components: { mainContent, mostPopularGames, aboutUs, careers }
 };
 </script>
 <style></style>

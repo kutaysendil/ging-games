@@ -38,13 +38,13 @@
             rounded
             color="primary"
             label="discover"
-            size="lg"
+            size="1.4rem"
           /><q-btn
             to="/contact"
             rounded
             color="secondary"
             label="contact"
-            size="lg"
+            size="1.4rem"
           />
         </div>
       </div>

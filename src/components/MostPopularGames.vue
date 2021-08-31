@@ -18,7 +18,6 @@
         </div>
       </div>
     </div>
-    <q-separator size="3px" />
   </q-page>
 </template>
 

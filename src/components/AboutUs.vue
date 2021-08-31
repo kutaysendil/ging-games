@@ -1,5 +1,6 @@
 <template>
   <div>
+    <q-separator size="3px" />
     <q-page class="about " padding>
       <div class="row q-pt-lg">
         <div

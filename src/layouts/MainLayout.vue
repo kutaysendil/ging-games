@@ -34,7 +34,7 @@
     >
       <q-btn fab icon="keyboard_arrow_up" color="blue-3" />
     </q-page-scroller>
-    <q-footer elevated class="bg-grey-8 text-white">
+    <q-footer elevated class="bg-black text-white">
       <q-toolbar>
         <q-toolbar-title>
           <Footer></Footer>
@@ -48,6 +48,7 @@ import Footer from "components/Footer.vue";
 
 export default {
   components: { Footer },
+ 
   methods: {
     smooth() {
       const el = this.$parent.$children[0].$el;
