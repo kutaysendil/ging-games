@@ -1,5 +1,30 @@
 // app global css in SCSS form
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, rgb(255, 255, 255), 40%)
+) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
 
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@include scrollbars(0.5em, slategray);
 body {
   overflow-x: hidden;
 }

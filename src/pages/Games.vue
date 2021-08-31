@@ -6,7 +6,7 @@
         v-for="g in games"
         :key="g.name"
       >
-        <q-card class="my-card ">
+        <q-card flat bordered class="my-card ">
           <q-img class="my-img" :src="g.photo" basic>
             <div class="absolute-bottom text-subtitle2 text-center">
               {{ g.name }}
@@ -66,6 +66,8 @@ export default {
   width: 100%;
   max-width: 250px;
   margin: auto;
+}
+.my-card:hover {
 }
 .my-img {
   width: 100%;
