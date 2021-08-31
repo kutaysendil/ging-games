@@ -16,9 +16,9 @@
             active-bg-color="yellow"
             outside-arrows
           >
-            <q-route-tab to="/games" label="Games" />
-            <q-route-tab to="/careers" label="CAREERS" />
-            <q-route-tab to="/contact" label="Contact" />
+            <q-route-tab class="xd" to="/games" label="Games" />
+            <q-route-tab class="xd" to="/careers" label="CAREERS" />
+            <q-route-tab class="xd" to="/contact" label="Contact" />
           </q-tabs>
         </q-toolbar-title>
       </q-toolbar>
@@ -48,7 +48,7 @@ import Footer from "components/Footer.vue";
 
 export default {
   components: { Footer },
- 
+
   methods: {
     smooth() {
       const el = this.$parent.$children[0].$el;
@@ -59,4 +59,13 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.xd:hover {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.3em;
+}
+</style>

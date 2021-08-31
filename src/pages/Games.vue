@@ -29,6 +29,7 @@ export default {
   },
   mounted() {
     this.fetchData();
+    console.log(this.$q.platform.is);
   },
   methods: {
     async fetchData() {
@@ -66,8 +67,7 @@ export default {
   max-width: 250px;
   margin: auto;
 }
-.my-card:hover {
-}
+
 .my-img {
   width: 100%;
   height: 20rem;
