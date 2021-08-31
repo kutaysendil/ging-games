@@ -168,17 +168,24 @@ export default {
           await update
             .update({ name: this.name[i] })
             .then(() => {
-              console.log("suecces");
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `Success`
+              });
             })
             .catch(err => {
-              console.log("error", err);
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `${err}`
+              });
             });
           await this.$q.loading.hide();
           await this.$router.go();
         });
     },
     async uGrid(id, i) {
-      console.log(typeof this.grid);
       this.$q
         .dialog({
           title: "Alert",
@@ -193,10 +200,18 @@ export default {
           await update
             .update({ homePageGridNo: this.grid[i] })
             .then(() => {
-              console.log("suecces");
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `Success`
+              });
             })
             .catch(err => {
-              console.log("error", err);
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `${err}`
+              });
             });
           await this.$q.loading.hide();
           await this.$router.go();
@@ -217,10 +232,18 @@ export default {
           await update
             .update({ googleurl: this.gourl[i] })
             .then(() => {
-              console.log("suecces");
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `Success`
+              });
             })
             .catch(err => {
-              console.log("error", err);
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `${err}`
+              });
             });
           await this.$q.loading.hide();
           await this.$router.go();
@@ -241,10 +264,18 @@ export default {
           await update
             .update({ url: this.appurl[i] })
             .then(() => {
-              console.log("suecces");
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `success`
+              });
             })
             .catch(err => {
-              console.log("error", err);
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `${err}`
+              });
             });
           await this.$q.loading.hide();
           await this.$router.go();
@@ -268,10 +299,18 @@ export default {
             .doc(id)
             .delete()
             .then(() => {
-              console.log("delete");
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `Success`
+              });
             })
             .catch(err => {
-              console.log("error", err);
+              this.$q.notify({
+                type: "positive",
+                position: "center",
+                message: `${err}`
+              });
             });
           await this.$q.loading.hide();
           await this.$router.go();

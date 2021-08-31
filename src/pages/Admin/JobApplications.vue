@@ -107,7 +107,6 @@ export default {
           this.jobs = false;
         }
 
-        console.log(this.jobs);
       } catch (error) {
         this.$q.notify({
           type: "negative",

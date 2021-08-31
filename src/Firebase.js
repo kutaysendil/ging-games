@@ -6,12 +6,12 @@ import "firebase/firebase-storage";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDzUWXbBdVJXC39r3cIIWVeNWQGusLmAFg",
-  authDomain: "ging-games.firebaseapp.com",
-  projectId: "ging-games",
-  storageBucket: "ging-games.appspot.com",
-  messagingSenderId: "922135840219",
-  appId: "1:922135840219:web:2279916c9c745bdf0c93fe"
+  apiKey: `${process.env.F_APIKEY}`,
+  authDomain: `${process.env.F_AUTHDOM}`,
+  projectId: `${process.env.F_PID}`,
+  storageBucket: `${process.env.F_STORAGE}`,
+  messagingSenderId: `${process.env.F_MESSAGE}`,
+  appId: `${process.env.F_APPID}`
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 

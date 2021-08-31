@@ -44,7 +44,6 @@ export default {
           return { id, ...data };
         });
       } catch (error) {
-        console.log(error);
         this.$q.notify({
           type: "negative",
           position: "center",
