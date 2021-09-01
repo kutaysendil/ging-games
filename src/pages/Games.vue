@@ -6,13 +6,21 @@
         v-for="g in games"
         :key="g.name"
       >
-        <q-card flat bordered class="my-card "
-          ><a
+        <q-card flat bordered class="my-card ">
+          <a
             :href="g.url"
             target="_blank"
-            class="apple text-center vertical-middle"
-            ><q-avatar class="vert" icon="fab fa-apple"/></a
-          ><a :href="g.googleurl" target="_blank" class="google text-center">
+            :class="g.url.length < 3 && 'disabled'"
+            class="apple text-center"
+          >
+            <q-avatar class="vert" icon="fab fa-apple"
+          /></a>
+          <a
+            :class="g.googleurl.length < 3 && 'disabled'"
+            :href="g.googleurl > 5 ? g.googleurl : ''"
+            target="_blank"
+            class="google text-center"
+          >
             <q-avatar class="vert" icon="fab fa-google-play" />
           </a>
           <q-img class="my-img" :src="g.photo" basic>
@@ -69,6 +77,9 @@ export default {
   background-image: url("~assets/Grad.png");
   opacity: 0.8;
   background-repeat: space;
+}
+.ceza {
+  pointer-events: none;
 }
 .my-card {
   width: 100%;

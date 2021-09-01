@@ -12,9 +12,15 @@
             <a
               :href="g.url"
               target="_blank"
+              :class="g.url.length < 3 && 'disabled'"
               class="apple text-center vertical-middle"
               ><q-avatar class="vert" icon="fab fa-apple"/></a
-            ><a :href="g.googleurl" target="_blank" class="google text-center">
+            ><a
+              :href="g.googleurl"
+              target="_blank"
+              :class="g.googleurl.length < 3 && 'disabled'"
+              class="google text-center"
+            >
               <q-avatar class="vert" icon="fab fa-google-play" />
             </a>
             <q-img class="my-img" :src="g.photo" basic>
