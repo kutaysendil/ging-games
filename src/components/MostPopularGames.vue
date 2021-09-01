@@ -10,17 +10,11 @@
         >
           <q-card class="my-card ">
             <a
-              v-if="$q.platform.is.win"
               :href="g.url"
               target="_blank"
               class="apple text-center vertical-middle"
               ><q-avatar class="vert" icon="fab fa-apple"/></a
-            ><a
-              v-if="$q.platform.is.win"
-              :href="g.googleurl"
-              target="_blank"
-              class="google text-center"
-            >
+            ><a :href="g.googleurl" target="_blank" class="google text-center">
               <q-avatar class="vert" icon="fab fa-google-play" />
             </a>
             <q-img class="my-img" :src="g.photo" basic>
@@ -115,13 +109,21 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 }
+.my-card:active > a,
 .my-card:hover > a,
-.my-card:active > a {
+.my-card:focus > a {
   display: inline-block;
 }
 .my-img {
   width: 100%;
   height: 20rem;
   object-fit: cover;
+}
+@media (hover: hover) and (pointer: fine) {
+  .my-card:active > a,
+  .my-card:hover > a,
+  .my-card:focus > a {
+    display: inline-block;
+  }
 }
 </style>
