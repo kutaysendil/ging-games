@@ -105,9 +105,8 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 }
-.my-card:active > a,
-.my-card:hover > a,
-.my-card:focus > a {
+
+.my-card:hover > a {
   display: inline-block;
 }
 .my-img {
@@ -117,7 +116,6 @@ export default {
 }
 @media (hover: hover) and (pointer: fine) {
   .my-card:active > a,
-  .my-card:hover > a,
   .my-card:focus > a {
     display: inline-block;
   }
