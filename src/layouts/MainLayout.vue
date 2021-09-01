@@ -11,7 +11,7 @@
           <q-tabs
             class="text-white "
             align="right"
-            indicator-color="blue"
+            indicator-color="red"
             active-color="grey"
             active-bg-color="yellow"
             outside-arrows

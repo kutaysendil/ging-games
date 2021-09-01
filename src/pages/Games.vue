@@ -6,7 +6,21 @@
         v-for="g in games"
         :key="g.name"
       >
-        <q-card flat bordered class="my-card ">
+        <q-card flat bordered class="my-card "
+          ><a
+            v-if="$q.platform.is.win"
+            :href="g.url"
+            target="_blank"
+            class="apple text-center vertical-middle"
+            ><q-avatar class="vert" icon="fab fa-apple"/></a
+          ><a
+            v-if="$q.platform.is.win"
+            :href="g.googleurl"
+            target="_blank"
+            class="google text-center"
+          >
+            <q-avatar class="vert" icon="fab fa-google-play" />
+          </a>
           <q-img class="my-img" :src="g.photo" basic>
             <div class="absolute-bottom text-subtitle2 text-center">
               {{ g.name }}
@@ -29,7 +43,7 @@ export default {
   },
   mounted() {
     this.fetchData();
-    console.log(this.$q.platform.is);
+    console.log(this.$q.platform);
   },
   methods: {
     async fetchData() {
@@ -67,7 +81,39 @@ export default {
   max-width: 250px;
   margin: auto;
 }
-
+.my-card > .google {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font: bold 12px/100px Sans-Serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgba(100, 100, 100, 0.9);
+}
+.vert {
+  padding-top: 100%;
+}
+.my-card > .apple {
+  position: absolute;
+  left: 50%;
+  z-index: 3;
+  display: none;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font: bold 12px/100px Sans-Serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgba(100, 100, 100, 0.9);
+}
+.my-card:hover > a {
+  display: inline-block;
+}
 .my-img {
   width: 100%;
   height: 20rem;
