@@ -11,13 +11,12 @@
           <q-card class="my-card ">
             <a
               :href="g.url"
-              target="_blank"
               :class="g.url.length < 3 && 'disabled'"
               class="apple text-center vertical-middle"
               ><q-avatar class="vert" icon="fab fa-apple"/></a
             ><a
               :href="g.googleurl"
-              target="_blank"
+              t
               :class="g.googleurl.length < 3 && 'disabled'"
               class="google text-center"
             >

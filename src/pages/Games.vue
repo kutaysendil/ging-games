@@ -9,7 +9,6 @@
         <q-card flat bordered class="my-card ">
           <a
             :href="g.url"
-            target="_blank"
             :class="g.url.length < 3 && 'disabled'"
             class="apple text-center"
           >
@@ -18,7 +17,6 @@
           <a
             :class="g.googleurl.length < 3 && 'disabled'"
             :href="g.googleurl > 5 ? g.googleurl : ''"
-            target="_blank"
             class="google text-center"
           >
             <q-avatar class="vert" icon="fab fa-google-play" />
