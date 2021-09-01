@@ -111,7 +111,8 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 }
-.my-card:hover > a {
+.my-card:hover > a,
+.my-card:active > a {
   display: inline-block;
 }
 .my-img {
