@@ -51,7 +51,7 @@
             v-if="$q.platform.is.ios"
             :href="g.url"
             :class="g.url.length < 3 && 'disabled'"
-            class="apple text-center  "
+            class="justgoogle text-center  "
           >
             <q-avatar class="vertt" icon="fab fa-apple"
           /></a>
