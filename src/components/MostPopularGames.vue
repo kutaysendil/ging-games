@@ -32,6 +32,7 @@
         >
           <q-card bordered class="my-card ">
             <a
+              v-if="$q.platform.is.desktop"
               :href="g.url"
               :class="g.url.length < 3 && 'disabled'"
               class="apple text-center "
@@ -39,12 +40,29 @@
               <q-avatar class="vert" icon="fab fa-apple"
             /></a>
             <a
+              v-if="$q.platform.is.desktop"
               :class="g.googleurl.length < 3 && 'disabled'"
               :href="g.googleurl > 5 ? g.googleurl : ''"
               class="google text-center"
             >
               <q-avatar class="vert" icon="fab fa-google-play" />
             </a>
+            <a
+              v-if="$q.platform.is.android"
+              :class="g.googleurl.length < 3 && 'disabled'"
+              :href="g.googleurl > 5 ? g.googleurl : ''"
+              class="justgoogle"
+            >
+              <q-avatar class="vertt" icon="fab fa-google-play" />
+            </a>
+            <a
+              v-if="$q.platform.is.ios"
+              :href="g.url"
+              :class="g.url.length < 3 && 'disabled'"
+              class="apple text-center  "
+            >
+              <q-avatar class="vertt" icon="fab fa-apple"
+            /></a>
             <q-img transition="slide-down" class="my-img  " :src="g.photo">
               <template v-slot:loading>
                 <q-spinner-ball color="white" />
@@ -113,7 +131,38 @@ export default {
 
   border-radius: 25px 25px 50px 50px;
 }
+.justgoogle {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 40%;
+  font: bold 12px/100px Sans-Serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgba(100, 100, 100, 0.9);
 
+  border-radius: 20px 20px 50px 50px;
+}
+.justgoogle {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 40%;
+  font: bold 12px/100px Sans-Serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: rgba(100, 100, 100, 0.9);
+
+  border-radius: 20px 20px 50px 50px;
+}
 .my-card > .google {
   position: absolute;
   z-index: 3;
@@ -131,6 +180,9 @@ export default {
 }
 .vert {
   padding-top: 30%;
+}
+.vertt {
+  padding-top: 20%;
 }
 .my-card > .apple {
   position: absolute;
