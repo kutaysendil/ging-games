@@ -2,27 +2,53 @@
   <q-page class="bg">
     <q-separator size="3px" />
     <div ref="eleman">
-      <div class="row justify-evenly content-center full-width">
+      <div class="q-pa-xl q-gutter-lg ">
         <div
-          class="col-xs-12 col-md-6 col-lg-4 q-my-xl"
+          v-resize-text="{
+            ratio: 1.3,
+            minFontSize: '10px',
+            maxFontSize: '50px'
+          }"
+          class="text-h4 my-font"
+        >
+          Most Popular Games
+        </div>
+        <div
+          v-resize-text="{
+            ratio: 1.3,
+            minFontSize: '10px',
+            maxFontSize: '35px'
+          }"
+          class=" text-subtitle1 q-pt-lg my-font"
+        >
+          Play beyond
+        </div>
+      </div>
+      <div class=" row justify-evenly content-center full-width ">
+        <div
+          class="col-xs-12 col-md-6 col-lg-4 q-my-xl "
           v-for="g in games"
           :key="g.name"
         >
-          <q-card class="my-card ">
+          <q-card bordered class="my-card ">
             <a
               :href="g.url"
               :class="g.url.length < 3 && 'disabled'"
-              class="apple text-center vertical-middle"
-              ><q-avatar class="vert" icon="fab fa-apple"/></a
-            ><a
-              :href="g.googleurl"
-              t
+              class="apple text-center "
+            >
+              <q-avatar class="vert" icon="fab fa-apple"
+            /></a>
+            <a
               :class="g.googleurl.length < 3 && 'disabled'"
+              :href="g.googleurl > 5 ? g.googleurl : ''"
               class="google text-center"
             >
               <q-avatar class="vert" icon="fab fa-google-play" />
             </a>
-            <q-img class="my-img" :src="g.photo" basic>
+            <q-img transition="slide-down" class="my-img  " :src="g.photo">
+              <template v-slot:loading>
+                <q-spinner-ball color="white" />
+              </template>
               <div class="absolute-bottom text-subtitle2 text-center">
                 {{ g.name }}
               </div>
@@ -70,20 +96,24 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .bg {
-  background-color: #d8cece60;
+  background-image: url("~assets/Grad.png");
+  opacity: 0.8;
+  background-repeat: space;
+}
+.ceza {
+  pointer-events: none;
 }
 .my-card {
   width: 100%;
   max-width: 250px;
   margin: auto;
+  box-shadow: 10px 10px 8px #888888;
+
+  border-radius: 25px 25px 50px 50px;
 }
-.my-img {
-  width: 100%;
-  height: 20rem;
-  object-fit: cover;
-}
+
 .my-card > .google {
   position: absolute;
   z-index: 3;
@@ -96,9 +126,11 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
+
+  border-radius: 20px 0 0 50px;
 }
 .vert {
-  padding-top: 100%;
+  padding-top: 30%;
 }
 .my-card > .apple {
   position: absolute;
@@ -113,6 +145,8 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
+
+  border-radius: 0 20px 50px 0;
 }
 
 .my-card:hover > a {
@@ -120,8 +154,7 @@ export default {
 }
 .my-img {
   width: 100%;
-  height: 20rem;
-  object-fit: cover;
+  height: 12rem;
 }
 @media (hover: hover) and (pointer: fine) {
   .my-card:active > a,
