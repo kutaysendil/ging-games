@@ -95,7 +95,6 @@ export default {
   methods: {
     phone() {
       if (this.$q.platform.is.android || this.$q.platform.is.ios) {
-        alert();
       }
     },
     async fetchData() {
