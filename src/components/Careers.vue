@@ -7,19 +7,19 @@
             v-resize-text="{
               ratio: 1,
               minFontSize: '50px',
-              maxFontSize: '100px'
+              maxFontSize: '80px'
             }"
-            class="q-py-md text-center text-bold"
+            class="q-py-md text-center text-bold baslik"
           >
             Careers
           </div>
           <div
             v-resize-text="{
-              ratio: 2.2,
-              minFontSize: '10px',
-              maxFontSize: '35px'
+              ratio: 1.6,
+              minFontSize: '16px',
+              maxFontSize: '50px'
             }"
-            class="text-weight-light q-pa-xl"
+            class="text-weight-light q-pa-xl aciklama"
           >
             We are always looking for talented and creatively driven individuals
             to join our team. We offer a cozy work environment, fair social and
@@ -55,5 +55,11 @@ export default {};
 <style>
 .img {
   opacity: 0.8;
+}
+.baslik {
+  font-family: "buyuk";
+}
+.aciklama {
+  font-family: "baslik";
 }
 </style>

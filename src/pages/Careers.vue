@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class="bg ">
+  <q-page padding class="bg  ">
     <template>
       <div :class="$q.screen.gt.sm ? '' : 'hidden'">
         <div class="q-pa-md q-gutter-lg ">
@@ -14,7 +14,7 @@
             minFontSize: '10px',
             maxFontSize: '20px'
           }"
-          class="column q-gutter-xl q-col-gutter-lg "
+          class="column q-gutter-xl q-col-gutter-lg  aciklama"
         >
           <div class="col q-gutter-xl q-col-gutter-lg q-mb-lg">
             <div class="row items-center  q-col-gutter-lg">
@@ -28,7 +28,7 @@
                         minFontSize: '10px',
                         maxFontSize: '30px'
                       }"
-                      class="text-h6"
+                      class="text-h6 baslik"
                     >
                       Opportunities
                     </div>
@@ -61,7 +61,7 @@
               <div class="col-4  " style="max-width: 500px;  ">
                 <q-img
                   fit="fit"
-                  src="~assets/careeers/object.png"
+                  src="~assets/careeers/ddddd.png"
                   spinner-color="white"
                 />
               </div>
@@ -74,7 +74,7 @@
                         minFontSize: '10px',
                         maxFontSize: '30px'
                       }"
-                      class="text-h6"
+                      class="text-h6 baslik"
                     >
                       Be part of the team
                     </div>
@@ -102,7 +102,7 @@
                         minFontSize: '10px',
                         maxFontSize: '30px'
                       }"
-                      class="text-h6"
+                      class="text-h6 baslik"
                     >
                       Culture
                     </div>
@@ -135,7 +135,7 @@
             <q-breadcrumbs-el label="Careers" icon="fas fa-laptop-house" />
           </q-breadcrumbs>
         </div>
-        <div class="column q-gutter-xl ">
+        <div class="column q-gutter-xl aciklama">
           <div class="col  q-pt-lg  q-mb-lg">
             <div class="row items-center  q-col-gutter-lg">
               <div class="col-6  items-center content-center">
@@ -147,7 +147,7 @@
                         minFontSize: '10px',
                         maxFontSize: '30px'
                       }"
-                      class="text-h6"
+                      class="text-h6 baslik"
                     >
                       Opportunities
                     </div>
@@ -190,7 +190,7 @@
                         minFontSize: '10px',
                         maxFontSize: '30px'
                       }"
-                      class="text-h6"
+                      class="text-h6 baslik"
                     >
                       Be part of the team
                     </div>
@@ -217,7 +217,7 @@
                         minFontSize: '10px',
                         maxFontSize: '30px'
                       }"
-                      class="text-h6"
+                      class="text-h6 baslik"
                     >
                       Culture
                     </div>
@@ -251,12 +251,12 @@
           </q-breadcrumbs>
         </div>
         <div class="column q-gutter-xl">
-          <div class="col row justify-center">
+          <div class="col row justify-center aciklama">
             <q-card class="my-card">
               <q-img src="~assets/careeers/object.png" spinner-color="white" />
 
               <q-card-section>
-                <div class="text-h6">Opportunities</div>
+                <div class="text-h6 baslik">Opportunities</div>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
@@ -280,7 +280,7 @@
               />
 
               <q-card-section>
-                <div class="text-h6">Be part of the team</div>
+                <div class="text-h6 baslik">Be part of the team</div>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
@@ -296,7 +296,7 @@
               />
 
               <q-card-section>
-                <div class="text-h6">Culture</div>
+                <div class="text-h6 baslik">Culture</div>
               </q-card-section>
 
               <q-card-section class="q-pt-none">
@@ -343,5 +343,11 @@ export default {
 .my-card {
   width: 100%;
   max-width: 250px;
+}
+.baslik {
+  font-family: "buyuk";
+}
+.aciklama {
+  font-family: "baslik";
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <div class="fixed " style="width:20px; top:50%; z-index:2;">
+    <!-- <div class="fixed " style="width:20px; top:50%; z-index:2;">
       <q-btn color="white" text-color="black" label="Games" />
       <q-btn color="white" text-color="black" label="About" />
       <q-btn color="white"  text-color="black" label="Careers" />
-    </div>
+    </div> -->
     <main-content></main-content>
     <most-popular-games> </most-popular-games>
     <about-us></about-us>
@@ -28,8 +28,7 @@ export default {
     };
   },
 
-  components: { mainContent, mostPopularGames, aboutUs, careers },
- 
+  components: { mainContent, mostPopularGames, aboutUs, careers }
 };
 </script>
 <style></style>

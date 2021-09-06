@@ -7,16 +7,17 @@
           maxFontSize: '170px'
         }"
         v-animate-css="animationObject"
-        class="text-center text-amber q-pt-xl q-mt-xl"
+        class="text-center text-black q-pt-xl q-mt-xl fonty"
       >
         <VueTextGlitch
-          highlight1="yellow"
-          highlight2="orange"
+          highlight1="#6FD9FD"
+          highlight2="#E48BD8"
           background="transparent"
-          fill="#89D5FB"
-          text="Ging Up!"
+          fill="grey-5"
+          text="Ging Up"
           :height="222"
           :steps="20"
+          class="text-white"
         />
       </div>
 
@@ -24,12 +25,12 @@
         v-resize-text="{
           ratio: 1.5,
           minFontSize: '10px',
-          maxFontSize: '40px'
+          maxFontSize: '45px'
         }"
-        class=" text-center q-pt-xl q-mt-xl"
+        class=" text-center q-pt-xl q-mt-xl animalti  "
       >
         Ging Games is a mobile game company focused on creating engaging
-        experiences in tailored 3D spaces for you to play! Anytime, anywhere.
+        experiences in tailored 3D spaces for you to play ! Anytime, Anywhere.
       </p>
       <div class="  q-py-xl q-mt-lg ">
         <div class=" flex justify-evenly q-pa-md q-pt-xl q-mt-lg ">
@@ -60,7 +61,7 @@ export default {
   data() {
     return {
       animationObject: {
-        classes: "rubberBand",
+        classes: "pulse",
         duration: 3000,
         iteration: 10000
       }
@@ -84,5 +85,12 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.8;
+}
+.fonty {
+  font-family: "anim";
+}
+.animalti {
+  font-family: "baslik";
+  padding: 10%;
 }
 </style>

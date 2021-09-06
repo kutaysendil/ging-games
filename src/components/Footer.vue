@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black">
+  <div class="bg-black menu">
     <div :class="$q.screen.gt.sm ? '' : 'hidden'">
       <div class="row q-py-xl">
         <div class="col-2 q-pl-xl flex flex-center">
@@ -22,6 +22,7 @@
                 size="2rem"
                 href="https://www.instagram.com/ging.games/?igshid=1qffouyw8wfwl&hl=en"
                 target="__blank"
+                class="text-red-5"
               />
               <q-btn
                 icon="fab fa-linkedin"
@@ -29,6 +30,7 @@
                 href="https://www.linkedin.com/company/ging-games/about/"
                 target="__blank"
                 size="2rem"
+                class="text-blue-7"
               />
             </div>
             <div class="col ">
@@ -38,8 +40,14 @@
                 type="a"
                 href="https://www.facebook.com/Ging-Games-106200504084982/about/?ref=page_internal"
                 target="__blank"
+                class="text-blue-10"
               />
-              <q-btn icon="far fa-envelope" size="2rem" to="contact" />
+              <q-btn
+                class="text-amber-6"
+                icon="far fa-envelope"
+                size="2rem"
+                to="contact"
+              />
             </div>
           </div>
         </div>
@@ -50,7 +58,7 @@
           minFontSize: '10px',
           maxFontSize: '20px'
         }"
-        class="text-center q-py-md"
+        class="text-center q-py-md text-amber-8"
       >
         © 2020 Ging Games, Inc. All Rights Reserved.
       </div>
@@ -76,22 +84,25 @@
                 type="a"
                 href="https://www.instagram.com/ging.games/?igshid=1qffouyw8wfwl&hl=en"
                 target="__blank"
+                class="text-red-5"
               />
               <q-btn
                 icon="fab fa-linkedin"
                 type="a"
                 href="https://www.linkedin.com/company/ging-games/about/"
                 target="__blank"
+                class="text-blue-7"
               />
             </div>
             <div class="col ">
               <q-btn
                 icon="fab fa-facebook"
+                class="text-blue-10"
                 type="a"
                 href="https://www.facebook.com/Ging-Games-106200504084982/about/?ref=page_internal"
                 target="__blank"
               />
-              <q-btn icon="far fa-envelope" to="contact" />
+              <q-btn icon="far fa-envelope" class="text-amber-6" to="contact" />
             </div>
           </div>
         </div>
@@ -102,7 +113,7 @@
           minFontSize: '5px',
           maxFontSize: '14px'
         }"
-        class="text-center q-py-md"
+        class="text-center q-py-md text-amber-8"
       >
         © 2020 Ging Games, Inc. All Rights Reserved.
       </div>
@@ -125,6 +136,7 @@
             <div class="col">
               <q-btn
                 icon="fab fa-instagram"
+                class="text-red-5"
                 type="a"
                 href="https://www.instagram.com/ging.games/?igshid=1qffouyw8wfwl&hl=en"
                 target="__blank"
@@ -134,16 +146,18 @@
                 type="a"
                 href="https://www.linkedin.com/company/ging-games/about/"
                 target="__blank"
+                class="text-blue-7"
               />
             </div>
             <div class="col ">
               <q-btn
                 icon="fab fa-facebook"
+                class="text-blue-10"
                 type="a"
                 href="https://www.facebook.com/Ging-Games-106200504084982/about/?ref=page_internal"
                 target="__blank"
               />
-              <q-btn icon="far fa-envelope" to="contact" />
+              <q-btn icon="far fa-envelope" class="text-amber-6" to="contact" />
             </div>
           </div>
         </div>
@@ -154,7 +168,7 @@
           minFontSize: '5px',
           maxFontSize: '14px'
         }"
-        class="text-center q-py-md"
+        class="text-center q-py-md text-amber-8"
       >
         © 2020 Ging Games, Inc. All Rights Reserved.
       </div>
@@ -166,4 +180,8 @@
 export default {};
 </script>
 
-<style></style>
+<style>
+.menu {
+  font-family: "menu";
+}
+</style>

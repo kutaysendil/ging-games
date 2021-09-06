@@ -1,5 +1,5 @@
 <template>
-  <q-page padding class=" bg ">
+  <q-page padding class=" bg  ">
     <div class="q-pa-md q-gutter-lg ">
       <q-breadcrumbs>
         <q-breadcrumbs-el label="Home" icon="fas fa-home" to="/" />
@@ -11,14 +11,14 @@
           minFontSize: '10px',
           maxFontSize: '50px'
         }"
-        class="text-h4"
+        class="text-h4 aciklama"
       >
         Experience beyond fun
       </div>
     </div>
     <div class=" row justify-evenly content-center full-width ">
       <div
-        class="col-xs-12 col-md-6 col-lg-4 q-my-xl "
+        class="col-xs-12 col-md-6 col-lg-4 q-my-xl fonty  "
         v-for="g in games"
         :key="g.name"
       >
@@ -59,7 +59,9 @@
             <template v-slot:loading>
               <q-spinner-ball color="white" />
             </template>
-            <div class="absolute-bottom text-subtitle2 text-center">
+            <div
+              class="absolute-bottom text-subtitle2 text-center text-amber-8"
+            >
               {{ g.name }}
             </div>
           </q-img>
@@ -199,6 +201,12 @@ export default {
 .my-img {
   width: 100%;
   height: 12rem;
+}
+.aciklama {
+  font-family: "aciklama";
+}
+.fonty {
+  font-family: "anim";
 }
 @media (hover: hover) and (pointer: fine) {
   .my-card:active > a,

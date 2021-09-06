@@ -2,14 +2,14 @@
   <div>
     <q-separator size="3px" />
     <q-page class="about " padding>
-      <div class="row q-pt-lg">
+      <div class=" q-pt-lg">
         <div
           v-resize-text="{
             ratio: 1,
             minFontSize: '50px',
-            maxFontSize: '100px'
+            maxFontSize: '80px'
           }"
-          class="text-center col q-pt-lg text-bold"
+          class="text-center col text-h2 q-pt-lg text-bold baslik"
         >
           About Us
         </div>
@@ -18,9 +18,9 @@
             <div class="row q-pt-lg">
               <div
                 v-resize-text="{
-                  ratio: 2.2,
-                  minFontSize: '10px',
-                  maxFontSize: '50px'
+                  ratio: 1,
+                  minFontSize: '50px',
+                  maxFontSize: '80px'
                 }"
                 class="q-pt-lg col-xs-12 col-md-6   flex items-center "
               >
@@ -33,11 +33,11 @@
               <div class="col-xs-12 q-py-lg col-md-6 ">
                 <div
                   v-resize-text="{
-                    ratio: 2.2,
-                    minFontSize: '10px',
-                    maxFontSize: '35px'
+                    ratio: 1.6,
+                    minFontSize: '16px',
+                    maxFontSize: '50px'
                   }"
-                  class="text-weight-light q-pa-xl"
+                  class="text-weight-light q-pa-xl aciklama"
                 >
                   Ging Games is a mobile game company based in Ankara, Turkey.
                   Since our launch in 2019 we have worked with numerous
@@ -71,5 +71,11 @@ export default {};
 .about {
   background-color: #8be4fe;
   opacity: 0.8;
+}
+.baslik {
+  font-family: "buyuk";
+}
+.aciklama {
+  font-family: "baslik";
 }
 </style>

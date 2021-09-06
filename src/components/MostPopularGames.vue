@@ -5,37 +5,37 @@
       <div class="q-pa-xl q-gutter-lg ">
         <div
           v-resize-text="{
-            ratio: 1.3,
-            minFontSize: '10px',
-            maxFontSize: '50px'
+            ratio: 1,
+            minFontSize: '50px',
+            maxFontSize: '80px'
           }"
-          class="text-h4 my-font"
+          class=" baslik q-pb-lg text-bold"
         >
           Most Popular Games
         </div>
         <div
           v-resize-text="{
-            ratio: 1.3,
+            ratio: 1.1,
             minFontSize: '10px',
-            maxFontSize: '35px'
+            maxFontSize: '65px'
           }"
-          class=" text-subtitle1 q-pt-lg my-font"
+          class=" text-subtitle1 q-pt-lg aciklama "
         >
           Play beyond
         </div>
       </div>
-      <div class=" row justify-evenly content-center full-width ">
+      <div class=" row justify-evenly content-center full-width  ">
         <div
-          class="col-xs-12 col-md-6 col-lg-4 q-my-xl "
+          class="col-xs-12 col-md-6 col-lg-4 q-my-xl anim "
           v-for="g in games"
           :key="g.name"
         >
-          <q-card bordered class="my-card ">
+          <q-card @click="phone" bordered class="my-card">
             <a
               v-if="$q.platform.is.desktop"
               :href="g.url"
               :class="g.url.length < 3 && 'disabled'"
-              class="apple text-center "
+              class="apple text-center desk "
             >
               <q-avatar class="vert" icon="fab fa-apple"
             /></a>
@@ -43,7 +43,7 @@
               v-if="$q.platform.is.desktop"
               :class="g.googleurl.length < 3 && 'disabled'"
               :href="g.googleurl > 5 ? g.googleurl : ''"
-              class="google text-center"
+              class="google text-center desk"
             >
               <q-avatar class="vert" icon="fab fa-google-play" />
             </a>
@@ -51,7 +51,7 @@
               v-if="$q.platform.is.android"
               :class="g.googleurl.length < 3 && 'disabled'"
               :href="g.googleurl > 5 ? g.googleurl : ''"
-              class="justgoogle"
+              class="justgoogle "
             >
               <q-avatar class="vertt" icon="fab fa-google-play" />
             </a>
@@ -59,7 +59,7 @@
               v-if="$q.platform.is.ios"
               :href="g.url"
               :class="g.url.length < 3 && 'disabled'"
-              class="justgoogle text-center  "
+              class="justgoogle    "
             >
               <q-avatar class="vertt" icon="fab fa-apple"
             /></a>
@@ -67,7 +67,9 @@
               <template v-slot:loading>
                 <q-spinner-ball color="white" />
               </template>
-              <div class="absolute-bottom text-subtitle2 text-center">
+              <div
+                class="absolute-bottom text-subtitle2 text-center text-amber-8"
+              >
                 {{ g.name }}
               </div>
             </q-img>
@@ -91,6 +93,11 @@ export default {
     this.fetchData();
   },
   methods: {
+    phone() {
+      if (this.$q.platform.is.android || this.$q.platform.is.ios) {
+        alert();
+      }
+    },
     async fetchData() {
       try {
         const { docs } = await db
@@ -201,17 +208,24 @@ export default {
   border-radius: 0 20px 50px 0;
 }
 
-.my-card:hover > a {
+.my-card:hover > .desk {
   display: inline-block;
 }
+.tabb {
+  display: inline-block;
+}
+
 .my-img {
   width: 100%;
   height: 12rem;
 }
-@media (hover: hover) and (pointer: fine) {
-  .my-card:active > a,
-  .my-card:focus > a {
-    display: inline-block;
-  }
+.baslik {
+  font-family: "buyuk";
+}
+.aciklama {
+  font-family: "aciklama";
+}
+.anim {
+  font-family: "anim";
 }
 </style>
