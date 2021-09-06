@@ -26,7 +26,7 @@
                       v-resize-text="{
                         ratio: 1,
                         minFontSize: '10px',
-                        maxFontSize: '30px'
+                        maxFontSize: '50px'
                       }"
                       class="text-h6 baslik"
                     >
@@ -36,12 +36,24 @@
 
                   <q-separator dark inset />
 
-                  <q-card-section>
+                  <q-card-section
+                    v-resize-text="{
+                      ratio: 1.5,
+                      minFontSize: '10px',
+                      maxFontSize: '30px'
+                    }"
+                  >
                     {{ oppor }}
                   </q-card-section>
                   <q-card-actions>
                     <q-space />
-                    <q-btn flat to="careers/apply">Apply Now</q-btn>
+                    <q-btn
+                      rounded
+                      size="1.5rem"
+                      color="black"
+                      to="careers/apply"
+                      >Apply Now</q-btn
+                    >
                   </q-card-actions>
                 </q-card>
               </div>
@@ -72,7 +84,7 @@
                       v-resize-text="{
                         ratio: 1,
                         minFontSize: '10px',
-                        maxFontSize: '30px'
+                        maxFontSize: '50px'
                       }"
                       class="text-h6 baslik"
                     >
@@ -82,7 +94,13 @@
 
                   <q-separator dark inset />
 
-                  <q-card-section>
+                  <q-card-section
+                    v-resize-text="{
+                      ratio: 1.5,
+                      minFontSize: '10px',
+                      maxFontSize: '30px'
+                    }"
+                  >
                     {{ bePart }}
                   </q-card-section>
                 </q-card>
@@ -100,7 +118,7 @@
                       v-resize-text="{
                         ratio: 1,
                         minFontSize: '10px',
-                        maxFontSize: '30px'
+                        maxFontSize: '50px'
                       }"
                       class="text-h6 baslik"
                     >
@@ -110,7 +128,13 @@
 
                   <q-separator dark inset />
 
-                  <q-card-section>
+                  <q-card-section
+                    v-resize-text="{
+                      ratio: 1.5,
+                      minFontSize: '10px',
+                      maxFontSize: '30px'
+                    }"
+                  >
                     {{ culture }}
                   </q-card-section>
                 </q-card>
@@ -145,7 +169,7 @@
                       v-resize-text="{
                         ratio: 1,
                         minFontSize: '10px',
-                        maxFontSize: '30px'
+                        maxFontSize: '50px'
                       }"
                       class="text-h6 baslik"
                     >
@@ -153,12 +177,24 @@
                     </div>
                   </q-card-section>
 
-                  <q-card-section>
+                  <q-card-section
+                    v-resize-text="{
+                      ratio: 1.5,
+                      minFontSize: '10px',
+                      maxFontSize: '30px'
+                    }"
+                  >
                     {{ oppor }}
                   </q-card-section>
                   <q-card-actions>
                     <q-space />
-                    <q-btn flat to="careers/apply">Apply Now</q-btn>
+                    <q-btn
+                      rounded
+                      size="1.2rem"
+                      color="black"
+                      to="careers/apply"
+                      >Apply Now</q-btn
+                    >
                   </q-card-actions>
                 </q-card>
               </div>
@@ -188,7 +224,7 @@
                       v-resize-text="{
                         ratio: 1,
                         minFontSize: '10px',
-                        maxFontSize: '30px'
+                        maxFontSize: '50px'
                       }"
                       class="text-h6 baslik"
                     >
@@ -198,7 +234,13 @@
 
                   <q-separator dark inset />
 
-                  <q-card-section>
+                  <q-card-section
+                    v-resize-text="{
+                      ratio: 1.5,
+                      minFontSize: '10px',
+                      maxFontSize: '30px'
+                    }"
+                  >
                     {{ bePart }}
                   </q-card-section>
                 </q-card>
@@ -215,7 +257,7 @@
                       v-resize-text="{
                         ratio: 1,
                         minFontSize: '10px',
-                        maxFontSize: '30px'
+                        maxFontSize: '50px'
                       }"
                       class="text-h6 baslik"
                     >
@@ -225,7 +267,13 @@
 
                   <q-separator dark inset />
 
-                  <q-card-section>
+                  <q-card-section
+                    v-resize-text="{
+                      ratio: 1.5,
+                      minFontSize: '10px',
+                      maxFontSize: '30px'
+                    }"
+                  >
                     {{ culture }}
                   </q-card-section>
                 </q-card>
@@ -255,20 +303,30 @@
             <q-card class="my-card">
               <q-img src="~assets/careeers/object.png" spinner-color="white" />
 
-              <q-card-section>
+              <q-card-section
+                v-resize-text="{
+                  ratio: 1,
+                  minFontSize: '10px',
+                  maxFontSize: '50px'
+                }"
+              >
                 <div class="text-h6 baslik">Opportunities</div>
               </q-card-section>
 
-              <q-card-section class="q-pt-none">
+              <q-card-section
+                class="q-pt-none"
+                v-resize-text="{
+                  ratio: 1.5,
+                  minFontSize: '10px',
+                  maxFontSize: '30px'
+                }"
+              >
                 {{ oppor }}
               </q-card-section>
               <q-card-actions align="center">
-                <q-btn
-                  to="careers/apply"
-                  color="white"
-                  text-color="black"
-                  label="Apply Now"
-                />
+                <q-btn rounded size="1.5rem" color="black" to="careers/apply"
+                  >Apply Now</q-btn
+                >
               </q-card-actions>
             </q-card>
           </div>
@@ -280,10 +338,26 @@
               />
 
               <q-card-section>
-                <div class="text-h6 baslik">Be part of the team</div>
+                <div
+                  class="text-h6 baslik"
+                  v-resize-text="{
+                    ratio: 1,
+                    minFontSize: '10px',
+                    maxFontSize: '50px'
+                  }"
+                >
+                  Be part of the team
+                </div>
               </q-card-section>
 
-              <q-card-section class="q-pt-none">
+              <q-card-section
+                class="q-pt-none aciklama"
+                v-resize-text="{
+                  ratio: 1.5,
+                  minFontSize: '10px',
+                  maxFontSize: '30px'
+                }"
+              >
                 {{ bePart }}
               </q-card-section>
             </q-card>
@@ -296,20 +370,28 @@
               />
 
               <q-card-section>
-                <div class="text-h6 baslik">Culture</div>
+                <div
+                  class="text-h6 baslik"
+                  v-resize-text="{
+                    ratio: 1,
+                    minFontSize: '10px',
+                    maxFontSize: '50px'
+                  }"
+                >
+                  Culture
+                </div>
               </q-card-section>
 
-              <q-card-section class="q-pt-none">
+              <q-card-section
+                class="q-pt-none aciklama"
+                v-resize-text="{
+                  ratio: 1.5,
+                  minFontSize: '10px',
+                  maxFontSize: '30px'
+                }"
+              >
                 {{ culture }}
               </q-card-section>
-              <q-card-actions align="center">
-                <q-btn
-                  to="careers/apply"
-                  color="white"
-                  text-color="black"
-                  label="Apply Now"
-                />
-              </q-card-actions>
             </q-card>
           </div>
         </div>

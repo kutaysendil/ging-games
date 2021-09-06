@@ -14,9 +14,9 @@
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col q-pa-lg"
+          class="col q-pa-lg baslik"
         >
-          Write To Us!
+          Contact Us!
         </div>
         <div class="col q-pt-xl">
           <div class="row justify-around items-center q-col-gutter-xl q-pt-xl">
@@ -102,9 +102,9 @@
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col "
+          class="col baslik "
         >
-          Write To Us!
+          Contact Us!
         </div>
         <div class="col ">
           <div class="row justify-around items-center q-col-gutter-xl q-pt-md">
@@ -322,5 +322,8 @@ export default {
 .bg {
   background-image: url("~assets/Grad.png");
   opacity: 0.8;
+}
+.baslik {
+  font-family: "buyuk";
 }
 </style>
