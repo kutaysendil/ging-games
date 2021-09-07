@@ -125,22 +125,7 @@ export default {
 
   border-radius: 25px 25px 50px 50px;
 }
-.justgoogle {
-  position: absolute;
-  z-index: 3;
-  display: none;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-bottom: 40%;
-  font: bold 12px/100px Sans-Serif;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: rgba(100, 100, 100, 0.9);
 
-  border-radius: 20px 20px 50px 50px;
-}
 .justgoogle {
   position: absolute;
   z-index: 3;
@@ -170,7 +155,7 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 
-  border-radius: 20px 0 0 50px;
+  border-radius: 0 0 0 50px;
 }
 .vert {
   padding-top: 30%;
@@ -192,7 +177,7 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 
-  border-radius: 0 20px 50px 0;
+  border-radius: 0 0 50px 0;
 }
 
 .my-card:hover > a {

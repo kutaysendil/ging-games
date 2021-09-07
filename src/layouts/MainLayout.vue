@@ -14,7 +14,11 @@
             indicator-color="orange-8"
             active-color="orange-5"
             active-bg-color=""
+            mobile-arrows
             outside-arrows
+            :breakpoint="700"
+            left-icon="fas fa-caret-left"
+            right-icon="fas fa-caret-right"
           >
             <q-route-tab class="xd " to="/games" label="Games" />
             <q-route-tab class="xd" to="/careers" label="CAREERS" />

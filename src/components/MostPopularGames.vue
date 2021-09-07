@@ -94,7 +94,8 @@ export default {
   },
   methods: {
     phone() {
-      if (this.$q.platform.is.android || this.$q.platform.is.ios) {
+      // if (this.$q.platform.is.android || this.$q.platform.is.ios) {
+      if (this.$q.platform.is.desktop) {
       }
     },
     async fetchData() {
@@ -153,22 +154,7 @@ export default {
 
   border-radius: 20px 20px 50px 50px;
 }
-.justgoogle {
-  position: absolute;
-  z-index: 3;
-  display: none;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-bottom: 40%;
-  font: bold 12px/100px Sans-Serif;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: rgba(100, 100, 100, 0.9);
 
-  border-radius: 20px 20px 50px 50px;
-}
 .my-card > .google {
   position: absolute;
   z-index: 3;
@@ -182,7 +168,7 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 
-  border-radius: 20px 0 0 50px;
+  border-radius: 0 0 0 50px;
 }
 .vert {
   padding-top: 30%;
@@ -204,10 +190,10 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 
-  border-radius: 0 20px 50px 0;
+  border-radius: 0 0 50px 0;
 }
 
-.my-card:hover > .desk {
+.my-card:hover > a {
   display: inline-block;
 }
 .tabb {
@@ -226,5 +212,11 @@ export default {
 }
 .anim {
   font-family: "anim";
+}
+@media (hover: hover) and (pointer: fine) {
+  .my-card:active > a,
+  .my-card:focus > a {
+    display: inline-block;
+  }
 }
 </style>
