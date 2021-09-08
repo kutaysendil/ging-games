@@ -83,7 +83,7 @@ export default {
 }
 @media only screen and (min-width: 1366px) {
   .q-tab__label {
-    font-size: 16px;
+    font-size: 28px;
   }
 }
 </style>

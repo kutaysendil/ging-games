@@ -9,7 +9,11 @@
         </div>
         <div class="col-2">
           <div class="column text-right">
-            <q-btn class="col " size="1rem" @click="abouts" label="about us" />
+            <q-btn
+              class="col "
+              size="1rem"
+              label="about us"
+            />
             <q-btn class="col" size="1rem" to="contact" label="contact" />
             <q-btn class="col" size="1rem" to="careers" label="careers" />
           </div>
@@ -271,8 +275,9 @@ export default {
     ...mapState("app", ["about"])
   },
   methods: {
-    abouts() {
-      // this.$router.push({ name: "aboutUs" });
+    aboutus() {
+      console.log("asd", this.$route);
+      this.about.scroll();
     }
   }
 };
