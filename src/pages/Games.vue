@@ -122,8 +122,6 @@ export default {
   max-width: 250px;
   margin: auto;
   box-shadow: 10px 10px 8px #888888;
-
-  border-radius: 25px 25px 50px 50px;
 }
 
 .justgoogle {
@@ -139,8 +137,6 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
-
-  border-radius: 20px 20px 50px 50px;
 }
 .my-card > .google {
   position: absolute;
@@ -154,8 +150,6 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
-
-  border-radius: 0 0 0 50px;
 }
 .vert {
   padding-top: 30%;
@@ -176,16 +170,14 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
-
-  border-radius: 0 0 50px 0;
 }
 
 .my-card:hover > a {
   display: inline-block;
 }
 .my-img {
-  width: 100%;
-  height: 12rem;
+  // width: 100%;
+  // height: 12rem;
 }
 .aciklama {
   font-family: "aciklama";

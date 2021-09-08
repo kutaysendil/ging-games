@@ -4,12 +4,12 @@
       <q-toolbar class="bg-black ">
         <q-toolbar-title shrink>
           <q-btn flat round to="/" @click="smooth"
-            ><img src="~assets/ginglogo.png" alt=""
+            ><img class="logo" src="~assets/GingOrange.png" alt=""
           /></q-btn>
         </q-toolbar-title>
         <q-toolbar-title>
           <q-tabs
-            class="text-white fonty "
+            class="text-white  "
             align="right"
             indicator-color="orange-8"
             active-color="orange-5"
@@ -64,31 +64,26 @@ export default {
 };
 </script>
 <style lang="scss">
-.xdd:hover {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-size: 20%;
-  border-bottom: 0;
-  padding-bottom: 0.3em;
-}
 .xd {
-  width: 20rem;
+  width: 15rem;
 }
 .q-tab__label {
   font-size: 40px;
 }
-.fonty {
-  font-family: "menu";
+.logo {
+  width: 70px;
 }
 @media only screen and (max-width: 600px) {
   .q-tab__label {
-    font-size: 23px;
+    font-size: 20px;
+  }
+  .logo {
+    width: 50px;
   }
 }
 @media only screen and (min-width: 1366px) {
   .q-tab__label {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 </style>

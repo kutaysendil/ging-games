@@ -7,7 +7,7 @@
           maxFontSize: '170px'
         }"
         v-animate-css="animationObject"
-        class="text-center text-black q-pt-xl q-mt-xl fonty"
+        class="text-center text-black anim  fonty"
       >
         <VueTextGlitch
           highlight1="#6FD9FD"
@@ -23,29 +23,34 @@
 
       <p
         v-resize-text="{
-          ratio: 1.5,
+          ratio: 2.4,
           minFontSize: '10px',
-          maxFontSize: '45px'
+          maxFontSize: '40px'
         }"
-        class=" text-center q-pt-xl q-mt-xl animalti  "
+        class=" text-center  padd  "
       >
         Ging Games is a mobile game company focused on creating engaging
         experiences in tailored 3D spaces for you to play ! Anytime, Anywhere.
       </p>
       <div class="  q-py-xl q-mt-lg ">
-        <div class=" flex justify-evenly q-pa-md q-pt-xl q-mt-lg ">
+        <div class=" flex justify-center q-gutter-xl  ">
           <q-btn
             @click="smooth"
             rounded
-            color="primary"
+            color="transparent"
             label="discover"
-            size="1.4rem"
+            size="1.5rem"
+            text-color="black"
+            padding="0 4rem"
+            outline
           /><q-btn
             to="/contact"
             rounded
-            color="secondary"
+            color="black"
             label="contact"
-            size="1.4rem"
+            size="1.5rem"
+            text-color="white"
+            padding="5px 4rem"
           />
         </div>
       </div>
@@ -89,8 +94,14 @@ export default {
 .fonty {
   font-family: "anim";
 }
-.animalti {
-  font-family: "baslik";
-  padding: 10%;
+.padd {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.anim {
+  padding-top: 10%;
+}
+.btn {
+  border: 3px solid black;
 }
 </style>

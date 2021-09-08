@@ -1,32 +1,32 @@
 <template>
-  <q-page class="bg">
+  <q-page class="">
     <q-separator size="3px" />
     <div ref="eleman">
-      <div class="q-pa-xl q-gutter-lg ">
+      <div class="q-pa-xl q-gutter-lg  ">
         <div
           v-resize-text="{
-            ratio: 1,
-            minFontSize: '50px',
-            maxFontSize: '80px'
+            ratio: 2,
+            minFontSize: '20px',
+            maxFontSize: '75px'
           }"
-          class=" baslik q-pb-lg text-bold"
+          class=" q-pb-lg "
         >
           Most Popular Games
         </div>
         <div
           v-resize-text="{
-            ratio: 1.1,
-            minFontSize: '10px',
+            ratio: 2,
+            minFontSize: '20px',
             maxFontSize: '65px'
           }"
-          class=" text-subtitle1 q-pt-lg aciklama "
+          class=" text-subtitle1 q-pt-lg  "
         >
           Play beyond
         </div>
       </div>
-      <div class=" row justify-evenly content-center full-width  ">
+      <div class=" row justify-evenly content-center   ">
         <div
-          class="col-xs-12 col-md-6 col-lg-4 q-my-xl anim "
+          class="col-xs-12 col-md-6 col-lg-4 q-my-xl   "
           v-for="g in games"
           :key="g.name"
         >
@@ -63,7 +63,7 @@
             >
               <q-avatar class="vertt" icon="fab fa-apple"
             /></a>
-            <q-img transition="slide-down" class="my-img  " :src="g.photo">
+            <q-img transition="slide-down" class="my-img " :src="g.photo">
               <template v-slot:loading>
                 <q-spinner-ball color="white" />
               </template>
@@ -75,6 +75,18 @@
             </q-img>
           </q-card>
         </div>
+      </div>
+      <div class="text-center q-py-lg">
+        <q-btn
+          to="/games"
+          rounded
+          color="transparent"
+          label="see more"
+          size="1.5rem"
+          text-color="deep-purple-5"
+          padding="5px 4rem"
+          outline
+        />
       </div>
     </div>
   </q-page>
@@ -135,8 +147,6 @@ export default {
   max-width: 250px;
   margin: auto;
   box-shadow: 10px 10px 8px #888888;
-
-  border-radius: 25px 25px 50px 50px;
 }
 .justgoogle {
   position: absolute;
@@ -151,8 +161,6 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
-
-  border-radius: 20px 20px 50px 50px;
 }
 
 .my-card > .google {
@@ -167,8 +175,6 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
-
-  border-radius: 0 0 0 50px;
 }
 .vert {
   padding-top: 30%;
@@ -189,8 +195,6 @@ export default {
   text-decoration: none;
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
-
-  border-radius: 0 0 50px 0;
 }
 
 .my-card:hover > a {
@@ -201,18 +205,10 @@ export default {
 }
 
 .my-img {
-  width: 100%;
-  height: 12rem;
+  //  width: 100%;
+  // height: 12rem;
 }
-.baslik {
-  font-family: "buyuk";
-}
-.aciklama {
-  font-family: "aciklama";
-}
-.anim {
-  font-family: "anim";
-}
+
 @media (hover: hover) and (pointer: fine) {
   .my-card:active > a,
   .my-card:focus > a {
