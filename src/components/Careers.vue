@@ -36,10 +36,13 @@
           <div class="text-center q-py-lg">
             <q-btn
               to="/careers"
-              color="black"
-              text-color="white"
-              label="See More"
-              size="1.4rem"
+              rounded
+              color="transparent"
+              label="see more"
+              size="1.5rem"
+              text-color="deep-purple-5"
+              padding="5px 4rem"
+              outline
             />
           </div>
         </div>
