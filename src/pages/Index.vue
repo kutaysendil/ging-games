@@ -7,7 +7,7 @@
     </div> -->
     <main-content></main-content>
     <most-popular-games> </most-popular-games>
-    <about-us></about-us>
+    <about-us id="about"></about-us>
     <careers></careers>
   </q-page>
 </template>

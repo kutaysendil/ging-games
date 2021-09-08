@@ -10,7 +10,9 @@
         <div class="col-2">
           <div class="column text-right">
             <q-btn
-              class="col "
+              class="col"
+              :to="{ name: '', hash: 'about' }"
+              @click="aboutus"
               size="1rem"
               label="about us"
             />
@@ -276,8 +278,7 @@ export default {
   },
   methods: {
     aboutus() {
-      console.log("asd", this.$route);
-      this.about.scroll();
+      this.about.scrollIntoView({ behavior: "smooth" });
     }
   }
 };
