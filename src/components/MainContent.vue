@@ -1,6 +1,6 @@
 <template>
   <div class="bg-image">
-    <div padding class="q-pt-xl">
+    <div padding>
       <div
         v-resize-text="{
           minFontSize: '70px',

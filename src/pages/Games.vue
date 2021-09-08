@@ -11,14 +11,14 @@
           minFontSize: '10px',
           maxFontSize: '50px'
         }"
-        class="text-h4 aciklama"
+        class="text-h4 "
       >
         Experience beyond fun
       </div>
     </div>
     <div class=" row justify-evenly content-center full-width ">
       <div
-        class="col-xs-12 col-md-6 col-lg-4 q-my-xl fonty  "
+        class="col-xs-12 col-md-6 col-lg-4 q-my-xl   "
         v-for="g in games"
         :key="g.name"
       >
@@ -179,12 +179,7 @@ export default {
   // width: 100%;
   // height: 12rem;
 }
-.aciklama {
-  font-family: "aciklama";
-}
-.fonty {
-  font-family: "anim";
-}
+
 @media (hover: hover) and (pointer: fine) {
   .my-card:active > a,
   .my-card:focus > a {
