@@ -1,13 +1,24 @@
 <template>
-  <q-page padding class="bg ">
-    <div class="q-pa-md q-gutter-lg q-pt-xl">
+  <q-page padding>
+    <div>
+      <div class="bg1"></div>
+      <div class="bg2"></div>
+      <div class="bg3"></div>
+      <div class="bg4"></div>
+      <div class="bg6"></div>
+      <div class="bg5"></div>
+      <div class="bg7"></div>
+      <div class="bg8"></div>
+      <div class="bg9"></div>
+    </div>
+    <div class="q-pa-md q-gutter-lg q-pt-md">
       <q-breadcrumbs>
         <q-breadcrumbs-el label="Home" icon="fas fa-home" to="/" />
         <q-breadcrumbs-el label="Contact" icon="fas fa-paper-plane" />
       </q-breadcrumbs>
     </div>
     <div :class="$q.screen.gt.sm ? '' : 'hidden'">
-      <div class="column q-pt-xl">
+      <div class="column ">
         <div
           v-resize-text="{
             ratio: 1,
@@ -19,7 +30,7 @@
           Contact Us!
         </div>
         <div class="col q-pt-xl">
-          <div class="row justify-around items-center q-col-gutter-xl q-pt-xl">
+          <div class="row justify-around items-center q-col-gutter-md q-pt-xl">
             <div class="col-4  " style="max-width:550px;  ">
               <q-img
                 style=" opacity:5;"
@@ -102,7 +113,7 @@
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col baslik "
+          class="col  "
         >
           Contact Us!
         </div>
@@ -319,11 +330,138 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
+.bg1 {
   background-image: url("~assets/Grad.png");
-  opacity: 0.8;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  bottom: 80%;
 }
-.baslik {
-  font-family: "buyuk";
+.bg3 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  bottom: 80%;
+}
+.bg2 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 2%;
+  left: 80%;
+}
+.bg3 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 0%;
+  left: 40%;
+}
+.bg3 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 33%;
+  left: 12%;
+}
+.bg4 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 29%;
+  left: 61%;
+}
+.bg5 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 53%;
+  left: 1%;
+}
+.bg6 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 58%;
+  left: 41%;
+}
+.bg7 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 11%;
+  left: 51%;
+}
+.bg8 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 8%;
+  left: 25%;
+}
+.bg9 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 83%;
+  left: 33%;
+}
+.bg9 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 93%;
+  left: 21%;
 }
 </style>
