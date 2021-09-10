@@ -1,15 +1,9 @@
 <template>
   <q-page>
-    <!-- <div class="fixed " style="width:20px; top:50%; z-index:2;">
-      <q-btn color="white" text-color="black" label="Games" />
-      <q-btn color="white" text-color="black" label="About" />
-      <q-btn color="white" text-color="black" label="Careers" />
-    </div> -->
     <main-content></main-content>
     <most-popular-games> </most-popular-games>
     <about-us id="about"></about-us>
     <careers></careers>
-    <q-btn color="white" text-color="black" label="Standard" to="admin" />
   </q-page>
 </template>
 
