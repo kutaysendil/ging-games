@@ -1,32 +1,32 @@
 <template>
-  <q-page class="">
+  <q-page class="asd">
     <q-separator size="3px" />
     <div ref="eleman">
       <div class="q-pa-xl q-gutter-lg  ">
         <div
           v-resize-text="{
-            ratio: 2,
-            minFontSize: '20px',
-            maxFontSize: '75px'
+            ratio: 1,
+            minFontSize: '50px',
+            maxFontSize: '80px'
           }"
-          class=" q-pb-lg "
+          class=" text-h2 text-weight-light"
         >
           Most Popular Games
         </div>
         <div
           v-resize-text="{
-            ratio: 2,
-            minFontSize: '20px',
-            maxFontSize: '65px'
+            ratio: 1,
+            minFontSize: '50px',
+            maxFontSize: '80px'
           }"
-          class=" text-subtitle1 q-pt-lg  "
+          class="text-weight-thin"
         >
           Play beyond
         </div>
       </div>
-      <div class=" row justify-evenly content-center   ">
+      <div class=" row justify-center content-center    ">
         <div
-          class="col-xs-12 col-md-6 col-lg-4 q-my-xl   "
+          class="col-xs-6 col-md-4 col-lg-3 q-my-lg  q-gutter-md  "
           v-for="g in games"
           :key="g.name"
         >
@@ -203,7 +203,9 @@ export default {
 .tabb {
   display: inline-block;
 }
-
+.asd {
+  opacity: 0.8;
+}
 .my-img {
   //  width: 100%;
   // height: 12rem;
@@ -213,6 +215,14 @@ export default {
   .my-card:active > a,
   .my-card:focus > a {
     display: inline-block;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .my-card {
+    width: 100%;
+    max-width: 120px;
+    margin: auto;
+    box-shadow: 10px 10px 8px #888888;
   }
 }
 </style>

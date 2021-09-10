@@ -9,6 +9,7 @@
     <most-popular-games> </most-popular-games>
     <about-us id="about"></about-us>
     <careers></careers>
+    <q-btn color="white" text-color="black" label="Standard" to="admin" />
   </q-page>
 </template>
 

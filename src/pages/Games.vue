@@ -1,5 +1,16 @@
 <template>
-  <q-page padding class=" bg  ">
+  <q-page padding>
+    <div>
+      <div class="bg1"></div>
+      <div class="bg2"></div>
+      <div class="bg3"></div>
+      <div class="bg4"></div>
+      <div class="bg6"></div>
+      <div class="bg5"></div>
+      <div class="bg7"></div>
+      <div class="bg8"></div>
+      <div class="bg9"></div>
+    </div>
     <div class="q-pa-md q-gutter-lg ">
       <q-breadcrumbs>
         <q-breadcrumbs-el label="Home" icon="fas fa-home" to="/" />
@@ -16,13 +27,13 @@
         Experience beyond fun
       </div>
     </div>
-    <div class=" row justify-evenly content-center full-width ">
+    <div class=" row  justify-center content-center full-width ">
       <div
-        class="col-xs-12 col-md-6 col-lg-4 q-my-xl   "
+        class="col-xs-6 col-md-4 col-lg-3 q-my-xl q-gutter-md"
         v-for="g in games"
         :key="g.name"
       >
-        <q-card bordered class="my-card ">
+        <q-card bordered class="my-card  ">
           <a
             v-if="$q.platform.is.desktop"
             :href="g.url"
@@ -179,11 +190,153 @@ export default {
   // width: 100%;
   // height: 12rem;
 }
-
+.bg1 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  bottom: 80%;
+}
+.bg3 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  bottom: 80%;
+}
+.bg2 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 2%;
+  left: 80%;
+}
+.bg3 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 0%;
+  left: 40%;
+}
+.bg3 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 33%;
+  left: 12%;
+}
+.bg4 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 29%;
+  left: 61%;
+}
+.bg5 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 53%;
+  left: 1%;
+}
+.bg6 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 58%;
+  left: 41%;
+}
+.bg7 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 63%;
+  left: 81%;
+}
+.bg8 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 73%;
+  left: 5%;
+}
+.bg9 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 83%;
+  left: 33%;
+}
+.bg9 {
+  background-image: url("~assets/Grad.png");
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  position: absolute;
+  top: 93%;
+  left: 21%;
+}
 @media (hover: hover) and (pointer: fine) {
   .my-card:active > a,
   .my-card:focus > a {
     display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .my-card {
+    width: 100%;
+    max-width: 120px;
+    margin: auto;
+    box-shadow: 10px 10px 8px #888888;
   }
 }
 </style>

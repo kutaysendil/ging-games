@@ -85,7 +85,7 @@
                       name="message"
                       :rules="[
                         val =>
-                          (val && val.length > 30) || 'Please type your message'
+                          (val && val.length > 15) || 'Minimum 15 characters'
                       ]"
                     />
                     <div class="flex flex-center">

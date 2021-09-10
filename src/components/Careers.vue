@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-lg">
+  <div class="q-pa-lg asd">
     <div :class="$q.screen.gt.sm ? '' : 'hidden'">
       <div class="row ">
         <div class="col-xs-12 col-md-6 flex items-center  ">
@@ -16,7 +16,7 @@
               minFontSize: '50px',
               maxFontSize: '80px'
             }"
-            class="q-py-md text-center "
+            class="q-py-md text-h2 text-center "
           >
             Careers
           </div>
@@ -155,5 +155,8 @@ export default {};
 .img {
   opacity: 0.8;
   width: 100%;
+}
+.asd {
+  opacity: 0.8;
 }
 </style>
