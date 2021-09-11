@@ -106,7 +106,12 @@
         </div>
         <div class="col-2">
           <div class="column">
-            <q-btn class="col" label="about us" />
+            <q-btn
+              class="col"
+              label="about us"
+              :to="{ name: '', hash: 'about' }"
+              @click="aboutus"
+            />
             <q-btn class="col" to="careers" label="contact" />
             <q-btn class="col" to="careers" label="careers" />
           </div>
@@ -196,7 +201,12 @@
         </div>
         <div class="col-4">
           <div class="column">
-            <q-btn class="col" label="about us" />
+            <q-btn
+              class="col"
+              :to="{ name: '', hash: 'about' }"
+              @click="aboutus"
+              label="about us"
+            />
             <q-btn class="col" to="/contact" label="contact" />
             <q-btn class="col" to="careers" label="careers" />
           </div>
