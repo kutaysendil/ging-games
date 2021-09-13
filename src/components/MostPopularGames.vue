@@ -1,13 +1,13 @@
 <template>
-  <q-page class="asd">
+  <q-page>
     <q-separator size="3px" />
     <div ref="eleman">
       <div class="q-pa-xl q-gutter-lg  ">
         <div
           v-resize-text="{
-            ratio: 1,
+            ratio: 1.5,
             minFontSize: '50px',
-            maxFontSize: '80px'
+            maxFontSize: '60px'
           }"
           class=" text-h2 text-weight-light"
         >
@@ -15,9 +15,9 @@
         </div>
         <div
           v-resize-text="{
-            ratio: 1,
-            minFontSize: '50px',
-            maxFontSize: '80px'
+            ratio: 1.5,
+            minFontSize: '30px',
+            maxFontSize: '60px'
           }"
           class="text-weight-thin"
         >
@@ -30,7 +30,7 @@
           v-for="g in games"
           :key="g.name"
         >
-          <q-card @click="phone" bordered class="my-card">
+          <q-card bordered class="my-card">
             <a
               v-if="$q.platform.is.desktop"
               :href="g.url"
@@ -79,7 +79,12 @@
                 <q-spinner-ball color="white" />
               </template>
               <div
-                class="absolute-bottom text-subtitle2 text-center text-amber-8"
+                class="absolute-bottom text-subtitle2 text-center "
+                v-resize-text="{
+                  ratio: 1,
+                  minFontSize: '15px',
+                  maxFontSize: '22px'
+                }"
               >
                 {{ g.name }}
               </div>
@@ -116,11 +121,6 @@ export default {
     this.fetchData();
   },
   methods: {
-    phone() {
-      // if (this.$q.platform.is.android || this.$q.platform.is.ios) {
-      if (this.$q.platform.is.desktop) {
-      }
-    },
     async fetchData() {
       try {
         const { docs } = await db
@@ -145,12 +145,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
-  background-image: url("~assets/Grad.png");
-  opacity: 0.8;
-  background-repeat: space;
-}
-
 .desk {
   padding-top: 10%;
 }
@@ -214,9 +208,6 @@ export default {
 }
 .tabb {
   display: inline-block;
-}
-.asd {
-  opacity: 0.8;
 }
 
 @media (hover: hover) and (pointer: fine) {

@@ -70,6 +70,7 @@
                       ]"
                       v-model="mail"
                     />
+
                     <q-input
                       @input="
                         val => {
@@ -81,6 +82,9 @@
                       filled
                       type="file"
                       @rejected="onRejected"
+                      label="CV*"
+                      stack-label
+                      label-color="dark"
                     />
                     <q-input
                       rounded
@@ -187,6 +191,9 @@
                       filled
                       type="file"
                       @rejected="onRejected"
+                      label="CV*"
+                      stack-label
+                      label-color="dark"
                     />
                     <q-input
                       rounded
@@ -285,6 +292,9 @@
                   filled
                   type="file"
                   @rejected="onRejected"
+                  label="CV*"
+                  stack-label
+                  label-color="dark"
                 />
                 <q-input
                   rounded

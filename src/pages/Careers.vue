@@ -366,20 +366,16 @@
           </div>
           <div class="col row justify-center">
             <q-card class="my-card">
-              <q-img
-                src="~assets/careeers/cultures.png"
-                spinner-color="white"
-              />
+              <q-img src="~assets/careeers/ddddd.png" spinner-color="white" />
 
-              <q-card-section>
-                <div
-                  class="q-pt-sm text-h6 text-weight-regular grey-10 "
-                  v-resize-text="{
-                    ratio: 1.5,
-                    minFontSize: '10px',
-                    maxFontSize: '50px'
-                  }"
-                >
+              <q-card-section
+                v-resize-text="{
+                  ratio: 1.5,
+                  minFontSize: '10px',
+                  maxFontSize: '50px'
+                }"
+              >
+                <div class="q-pt-sm text-h6 text-weight-regular grey-10 ">
                   Be part of the team
                 </div>
               </q-card-section>
@@ -403,15 +399,14 @@
                 spinner-color="white"
               />
 
-              <q-card-section>
-                <div
-                  class="q-pt-sm text-h6 text-weight-regular grey-10 "
-                  v-resize-text="{
-                    ratio: 1.5,
-                    minFontSize: '10px',
-                    maxFontSize: '50px'
-                  }"
-                >
+              <q-card-section
+                v-resize-text="{
+                  ratio: 1.5,
+                  minFontSize: '10px',
+                  maxFontSize: '50px'
+                }"
+              >
+                <div class="q-pt-sm text-h6 text-weight-regular grey-10 ">
                   Culture
                 </div>
               </q-card-section>
@@ -442,7 +437,7 @@ export default {
       bePart:
         "Game making is a tedious project where the ultimate input is the effort of the team.  Here in Ging Games we aim to make the production process as  fun (if not more) as the game itself. We believe in a development environment where each individual has a voice.",
       oppor:
-        "Ready to become a part of our team? We have vacant positions for evelopers, designers and artists. Our goal as a team is to continiously grow. Both as versatile game-makers and balanced individuals. Buckle up, pack your strengths, your passion and your sense of identity and contact us!",
+        "Ready to become a part of our team? We have vacant positions for developers, designers and artists. Our goal as a team is to continiously grow. Both as versatile game-makers and balanced individuals. Buckle up, pack your strengths, your passion and your sense of identity and contact us!",
       culture:
         "Our team culture nourishes differences and takes each idea into equation. We hope to create a working environment where each individual can feel valued, safe and heard. Our strength is our ability to cooperate towards a common goal, taking inspiration from each other."
     };

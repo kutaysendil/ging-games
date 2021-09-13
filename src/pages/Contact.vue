@@ -113,7 +113,7 @@
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col  text-center "
+          class="col "
         >
           Contact Us!
         </div>
@@ -201,7 +201,7 @@
     <div :class="$q.screen.xs ? '' : 'hidden'">
       <div>
         <div
-          class="text-center q-pb-sm"
+          class=" q-pb-sm q-pl-md"
           v-resize-text="{
             ratio: 1,
             minFontSize: '10px',

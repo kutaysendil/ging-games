@@ -82,7 +82,12 @@
               <q-spinner-ball color="white" />
             </template>
             <div
-              class="absolute-bottom text-subtitle2 text-center text-amber-8"
+              class="absolute-bottom text-subtitle2 text-center "
+              v-resize-text="{
+                ratio: 1,
+                minFontSize: '15px',
+                maxFontSize: '22px'
+              }"
             >
               {{ g.name }}
             </div>
@@ -131,11 +136,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
-  background-image: url("~assets/Grad.png");
-  opacity: 0.8;
-  background-repeat: space;
-}
 .ceza {
   pointer-events: none;
 }

@@ -16,7 +16,7 @@
               minFontSize: '50px',
               maxFontSize: '80px'
             }"
-            class="q-py-md text-h4 text-center "
+            class=" q-pl-xl text-h2 q-pt-lg "
           >
             Careers
           </div>
@@ -57,7 +57,7 @@
               minFontSize: '50px',
               maxFontSize: '80px'
             }"
-            class="q-py-md text-center "
+            class="q-py-md q-pl-xl "
           >
             Careers
           </div>
@@ -105,7 +105,7 @@
               minFontSize: '50px',
               maxFontSize: '80px'
             }"
-            class="q-py-xs text-center "
+            class="q-py-xs q-pl-sm "
           >
             Careers
           </div>
@@ -122,7 +122,7 @@
               minFontSize: '10px',
               maxFontSize: '35px'
             }"
-            class="text-weight-light q-pa-sm "
+            class="text-weight-light q-pa-sm q-pb-lg "
           >
             We are always looking for talented and creatively driven individuals
             to join our team. We offer a cozy work environment, fair social and

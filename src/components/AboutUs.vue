@@ -14,9 +14,9 @@
           >
             About Us
           </div>
-          <div class=" q-pt-lg">
-            <div class="q-pt-lg">
-              <div class="row q-pt-lg">
+          <div class=" ">
+            <div class="">
+              <div class="row ">
                 <div class="col-xs-12 q-py-lg col-md-8 ">
                   <div
                     v-resize-text="{
@@ -114,8 +114,8 @@
           >
             About Us
           </div>
-          <div class="row q-pt-lg">
-            <div class="col-xs-12 q-py-lg col-md-8 ">
+          <div class="row ">
+            <div class="col-xs-12  col-md-8 ">
               <div
                 v-resize-text="{
                   ratio: 2,
