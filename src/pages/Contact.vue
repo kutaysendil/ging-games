@@ -25,11 +25,11 @@
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col q-pa-lg baslik"
+          class="col q-pa-sm baslik"
         >
           Contact Us!
         </div>
-        <div class="col q-pt-xl">
+        <div class="col q-pt-sm">
           <div class="row justify-around items-center q-col-gutter-md q-pt-xl">
             <div class="col-4  " style="max-width:550px;  ">
               <q-img
@@ -113,21 +113,21 @@
             minFontSize: '10px',
             maxFontSize: '80px'
           }"
-          class="col  "
+          class="col  text-center "
         >
           Contact Us!
         </div>
         <div class="col ">
-          <div class="row justify-around items-center q-col-gutter-xl q-pt-md">
+          <div class="row  items-center q-col-gutter-lg ">
             <div class="col-6  " style="max-width:550px;  ">
               <q-img
-                style="background:white;"
+                style="background:transparent; width:100%;"
                 src="~assets/contactus.png"
                 spinner-color="white"
               />
             </div>
 
-            <div class="col-6  " style="max-width:600px;">
+            <div class="col-6 " style="max-width:600px;">
               <q-card class="my-card">
                 <q-card-section>
                   <q-form @submit="onSubmit" class="q-gutter-md">

@@ -239,9 +239,12 @@
             </div>
             <div class="col row items-center ">
               <div class=" col-2  ">
-                <q-avatar class="" icon="fas fa-map-marker" size="2rem" />
+                <q-avatar class="" icon="fas fa-map-marker" size="2.5rem" />
               </div>
-              <div class="col-10 text-center items-center">
+              <div
+                class="col-10 text-center items-center order-12"
+                style="padding-left:1px;"
+              >
                 <div
                   v-resize-text="{
                     ratio: 2,
