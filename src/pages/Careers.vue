@@ -25,14 +25,14 @@
               <div class="col-1"></div>
               <div class="col-6  items-center content-center">
                 <q-card bordered class="cardd" style="max-width: 700px; ">
-                  <q-card-section>
+                  <q-card-section s>
                     <div
                       v-resize-text="{
                         ratio: 1.5,
                         minFontSize: '10px',
                         maxFontSize: '50px'
                       }"
-                      class="text-h6 text-bold q-pa-sm q-pt-lg"
+                      class=" text-h2 q-pt-lg text-weight-regular grey-10  "
                     >
                       Opportunities
                     </div>
@@ -88,14 +88,14 @@
               </div>
               <div class="col-6  items-center flex  justify-end">
                 <q-card bordered class="cardd" style="max-width: 700px; ">
-                  <q-card-section>
+                  <q-card-section style="opacity:0.8;">
                     <div
                       v-resize-text="{
                         ratio: 1.5,
                         minFontSize: '10px',
                         maxFontSize: '50px'
                       }"
-                      class="text-h6 q-pa-sm q-pt-lg "
+                      class=" text-h2 q-pt-lg text-weight-regular grey-10  "
                     >
                       Be part of the team
                     </div>
@@ -123,14 +123,14 @@
               <div class="col-1"></div>
               <div class="col-6  items-center content-center">
                 <q-card class="cardd" bordered style="max-width: 700px; ">
-                  <q-card-section>
+                  <q-card-section style="opacity:0.8;">
                     <div
                       v-resize-text="{
                         ratio: 1.5,
                         minFontSize: '10px',
                         maxFontSize: '50px'
                       }"
-                      class="text-h6 q-pa-sm q-pt-lg "
+                      class=" text-h2 q-pt-lg text-weight-regular grey-10  "
                     >
                       Culture
                     </div>
@@ -177,7 +177,7 @@
                 <q-card
                   bordered
                   class="cardd q-mr-lg"
-                  style="max-width: 500px; "
+                  style="max-width: 500px; opacity:0.8; "
                 >
                   <q-card-section>
                     <div
@@ -186,7 +186,7 @@
                         minFontSize: '10px',
                         maxFontSize: '36px'
                       }"
-                      class="text-h6 "
+                      class=" q-pt-sm text-h6 text-weight-regular grey-10 "
                     >
                       Opportunities
                     </div>
@@ -216,7 +216,7 @@
                   </q-card-actions>
                 </q-card>
               </div>
-              <div class="col-6  " style="max-width: 600px;  ">
+              <div class="col-6  " style="max-width: 600px;">
                 <q-img
                   fit="fit"
                   src="~assets/careeers/object.png"
@@ -227,15 +227,19 @@
           </div>
           <div class="col  q-pt-lg  q-mb-lg">
             <div class="row items-center  q-col-gutter-lg">
-              <div class="col-6  " style="max-width: 500px;  ">
+              <div class="col-6  " style="max-width: 500px; ">
                 <q-img
                   fit="fit"
-                  src="~assets/careeers/object.png"
+                  src="~assets/careeers/ddddd.png"
                   spinner-color="white"
                 />
               </div>
               <div class="col-6  items-center flex  justify-end">
-                <q-card class="cardd" bordered style="max-width: 700px; ">
+                <q-card
+                  class="cardd"
+                  bordered
+                  style="max-width: 700px; opacity:0.8;  "
+                >
                   <q-card-section>
                     <div
                       v-resize-text="{
@@ -243,7 +247,7 @@
                         minFontSize: '10px',
                         maxFontSize: '36px'
                       }"
-                      class="text-h6 "
+                      class="q-pt-sm text-h6 text-weight-regular grey-10 "
                     >
                       Be part of the team
                     </div>
@@ -268,7 +272,11 @@
           <div class="col  q-pt-lg  q-mb-lg">
             <div class="row items-center  ">
               <div class="col-6  items-center content-center">
-                <q-card class="cardd" bordered style="max-width: 700px; ">
+                <q-card
+                  class="cardd"
+                  bordered
+                  style="max-width: 700px; opacity:0.8;  "
+                >
                   <q-card-section>
                     <div
                       v-resize-text="{
@@ -276,7 +284,7 @@
                         minFontSize: '16px',
                         maxFontSize: '46px'
                       }"
-                      class="text-h6  "
+                      class="q-pt-sm text-h6 text-weight-regular grey-10  "
                     >
                       Culture
                     </div>
@@ -315,7 +323,7 @@
             <q-breadcrumbs-el label="Careers" icon="fas fa-laptop-house" />
           </q-breadcrumbs>
         </div>
-        <div class="column q-gutter-xl">
+        <div class="column q-gutter-xl" style="opacity:0.8;">
           <div class="col row justify-center ">
             <q-card class="my-card">
               <q-img src="~assets/careeers/object.png" spinner-color="white" />
@@ -327,7 +335,9 @@
                   maxFontSize: '50px'
                 }"
               >
-                <div class="text-h6 ">Opportunities</div>
+                <div class="q-pt-sm text-h6 text-weight-regular grey-10 ">
+                  Opportunities
+                </div>
               </q-card-section>
 
               <q-card-section
@@ -363,7 +373,7 @@
 
               <q-card-section>
                 <div
-                  class="text-h6 "
+                  class="q-pt-sm text-h6 text-weight-regular grey-10 "
                   v-resize-text="{
                     ratio: 1.5,
                     minFontSize: '10px',
@@ -395,7 +405,7 @@
 
               <q-card-section>
                 <div
-                  class="text-h6 "
+                  class="q-pt-sm text-h6 text-weight-regular grey-10 "
                   v-resize-text="{
                     ratio: 1.5,
                     minFontSize: '10px',

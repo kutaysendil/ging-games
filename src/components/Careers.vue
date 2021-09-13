@@ -16,7 +16,7 @@
               minFontSize: '50px',
               maxFontSize: '80px'
             }"
-            class="q-py-md text-h2 text-center "
+            class="q-py-md text-h4 text-center "
           >
             Careers
           </div>
