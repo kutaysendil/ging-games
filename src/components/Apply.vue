@@ -235,10 +235,16 @@
     <div :class="$q.screen.xs ? '' : 'hidden'">
       <div>
         <div class="col-6  " style="max-width:600px;">
+          <div class="text-center">
+            <q-img
+              height="100%"
+              width="200px"
+              src="~assets/careeers/apply.png"
+              spinner-color="white"
+            />
+          </div>
+
           <div class="my-card">
-            <q-card-section>
-              <q-img src="~assets/careeers/apply.png" spinner-color="white" />
-            </q-card-section>
             <q-card-section>
               <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-sm">
                 <q-input
@@ -405,5 +411,10 @@ export default {
 .bg {
   background-image: url("~assets/Grad.png");
   opacity: 0.8;
+}
+.resim {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
 }
 </style>

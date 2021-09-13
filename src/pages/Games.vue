@@ -29,44 +29,55 @@
     </div>
     <div class=" row  justify-center content-center full-width ">
       <div
-        class="col-xs-6 col-md-4 col-lg-3 q-my-xl q-gutter-md"
+        class="col-xs-6 col-md-4 col-lg-3 q-my-lg  q-gutter-md  "
         v-for="g in games"
         :key="g.name"
       >
-        <q-card bordered class="my-card  ">
+        <q-card @click="phone" bordered class="my-card">
           <a
             v-if="$q.platform.is.desktop"
             :href="g.url"
             :class="g.url.length < 3 && 'disabled'"
-            class="apple text-center "
+            class="apple text-center desk "
+            target="_blank"
           >
-            <q-avatar class="vert" icon="fab fa-apple"
-          /></a>
+            <q-avatar class="vert" icon="fab fa-apple" />
+          </a>
           <a
             v-if="$q.platform.is.desktop"
             :class="g.googleurl.length < 3 && 'disabled'"
             :href="g.googleurl > 5 ? g.googleurl : ''"
-            class="google text-center"
+            class="google text-center desk"
+            target="_blank"
           >
             <q-avatar class="vert" icon="fab fa-google-play" />
           </a>
           <a
             v-if="$q.platform.is.android"
-            :class="g.googleurl.length < 3 && 'disabled'"
-            :href="g.googleurl > 5 ? g.googleurl : ''"
-            class="justgoogle"
+            :href="g.googleurl.length == '' ? g.url : g.googleurl"
+            class="justgoogle "
+            target="_blank"
           >
-            <q-avatar class="vertt" icon="fab fa-google-play" />
+            <q-avatar
+              v-if="g.googleurl == ''"
+              class="vertt"
+              icon="fab fa-apple"
+            />
+            <q-avatar v-else class="vertt" icon="fab fa-google-play" />
           </a>
           <a
             v-if="$q.platform.is.ios"
-            :href="g.url"
-            :class="g.url.length < 3 && 'disabled'"
-            class="justgoogle text-center  "
+            :href="g.url.length == '' ? g.googleurl : g.url"
+            class="justgoogle "
+            target="_blank"
           >
+            <q-avatar
+              v-if="g.url.length == ''"
+              class="vertt"
+              icon="fab fa-google-play"/>
             <q-avatar class="vertt" icon="fab fa-apple"
           /></a>
-          <q-img transition="slide-down" class="my-img  " :src="g.photo">
+          <q-img transition="slide-down" class="my-img " :src="g.photo">
             <template v-slot:loading>
               <q-spinner-ball color="white" />
             </template>
@@ -128,6 +139,9 @@ export default {
 .ceza {
   pointer-events: none;
 }
+.desk {
+  padding-top: 10%;
+}
 .my-card {
   width: 100%;
   max-width: 250px;
@@ -149,6 +163,7 @@ export default {
   text-transform: uppercase;
   background-color: rgba(100, 100, 100, 0.9);
 }
+
 .my-card > .google {
   position: absolute;
   z-index: 3;
@@ -190,6 +205,7 @@ export default {
   // width: 100%;
   // height: 12rem;
 }
+
 .bg1 {
   background-image: url("~assets/Grad.png");
   width: 200px;

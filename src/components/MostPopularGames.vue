@@ -36,31 +36,42 @@
               :href="g.url"
               :class="g.url.length < 3 && 'disabled'"
               class="apple text-center desk "
+              target="_blank"
             >
-              <q-avatar class="vert" icon="fab fa-apple"
-            /></a>
+              <q-avatar class="vert" icon="fab fa-apple" />
+            </a>
             <a
               v-if="$q.platform.is.desktop"
               :class="g.googleurl.length < 3 && 'disabled'"
               :href="g.googleurl > 5 ? g.googleurl : ''"
               class="google text-center desk"
+              target="_blank"
             >
               <q-avatar class="vert" icon="fab fa-google-play" />
             </a>
             <a
               v-if="$q.platform.is.android"
-              :class="g.googleurl.length < 3 && 'disabled'"
-              :href="g.googleurl > 5 ? g.googleurl : ''"
+              :href="g.googleurl.length == '' ? g.url : g.googleurl"
               class="justgoogle "
+              target="_blank"
             >
-              <q-avatar class="vertt" icon="fab fa-google-play" />
+              <q-avatar
+                v-if="g.googleurl == ''"
+                class="vertt"
+                icon="fab fa-apple"
+              />
+              <q-avatar v-else class="vertt" icon="fab fa-google-play" />
             </a>
             <a
               v-if="$q.platform.is.ios"
-              :href="g.url"
-              :class="g.url.length < 3 && 'disabled'"
-              class="justgoogle    "
+              :href="g.url.length == '' ? g.googleurl : g.url"
+              class="justgoogle "
+              target="_blank"
             >
+              <q-avatar
+                v-if="g.url.length == ''"
+                class="vertt"
+                icon="fab fa-google-play"/>
               <q-avatar class="vertt" icon="fab fa-apple"
             /></a>
             <q-img transition="slide-down" class="my-img " :src="g.photo">
@@ -139,8 +150,9 @@ export default {
   opacity: 0.8;
   background-repeat: space;
 }
-.ceza {
-  pointer-events: none;
+
+.desk {
+  padding-top: 10%;
 }
 .my-card {
   width: 100%;
@@ -180,7 +192,7 @@ export default {
   padding-top: 30%;
 }
 .vertt {
-  padding-top: 20%;
+  padding-bottom: 20%;
 }
 .my-card > .apple {
   position: absolute;
@@ -205,10 +217,6 @@ export default {
 }
 .asd {
   opacity: 0.8;
-}
-.my-img {
-  //  width: 100%;
-  // height: 12rem;
 }
 
 @media (hover: hover) and (pointer: fine) {
