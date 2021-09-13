@@ -200,6 +200,16 @@
     </div>
     <div :class="$q.screen.xs ? '' : 'hidden'">
       <div>
+        <div
+          class="text-center q-pb-sm"
+          v-resize-text="{
+            ratio: 1,
+            minFontSize: '10px',
+            maxFontSize: '80px'
+          }"
+        >
+          Contact Us!
+        </div>
         <div class="col-6  " style="max-width:600px;">
           <div class="my-card">
             <q-card-section>
